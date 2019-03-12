@@ -1,0 +1,67 @@
+#navbar {
+    overflow: hidden;
+    background-color: $secondary-color;
+}
+
+#navbar-title-text {
+    color: $secondary-text-color;
+    font-size: 20px;
+}
+
+#navbar-title, #navbar-title:link, #navbar-title:visited {
+    padding: 6px 0;
+    
+}
+
+#navbar-items {
+    float: right;
+    height: 100%;
+}
+
+.navbar-item {
+    padding: 17px 20px;
+    font-size: 16px;
+    color: $secondary-text-color;
+    text-decoration: none;
+}
+
+.navbar-item:hover {
+    background: $secondary-text-color;
+    color: $secondary-color;
+}
+
+#navbar-collapsed-dropdown {
+    background: $secondary-color;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+#navbar-items-collapsed, #navbar-collapsed-dropdown {
+    display: none;
+}
+
+#navbar-collapsed-dropdown-toggle:checked ~ #navbar-collapsed-dropdown {
+    display: block;
+}
+
+#navbar-collapsed-dropdown-toggle ~ label {
+    margin: 9px;
+    content: url("/images/bars-solid.svg");
+}
+
+#navbar-collapsed-dropdown-toggle:checked ~ label {
+    content: url("/images/times-solid.svg");
+}
+
+@media screen and (max-width: $medium-width) {
+
+    #navbar-items-expanded {
+        display: none;
+    }
+
+    #navbar-items-collapsed {
+        display: block;
+    }
+
+}

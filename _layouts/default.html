@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        
+        <link rel="stylesheet" href="/css/style.css">
+        
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <div id="navbar">
+            <div class="content">
+                <a id="navbar-title" class="line-item" href="/">
+                    <img class="logo line-item" src="/images/Frostphyr-logo.svg" alt="Frostphyr logo"/>
+                    <p id="navbar-title-text" class="line-item">Frostphyr</p>
+                </a>
+                <div id="navbar-items">
+                    <div id="navbar-items-expanded">
+                        <a class="navbar-item line-item" href="/">Home</a>
+                        <div class="dropdown line-item">
+                            <a class="navbar-item line-item" href="/projects">Projects</a>
+                            <div class="dropdown-content">
+                                <a class="navbar-item dropdown-item" href="/kin-event-keyer">KIN Event Keyer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="navbar-items-collapsed">
+                        <input id="navbar-collapsed-dropdown-toggle" class="hidden" type="checkbox"/>
+                        <label class="logo line-item unselectable" for="navbar-collapsed-dropdown-toggle"></label>
+                        <div id="navbar-collapsed-dropdown">
+                            <a class="navbar-item dropdown-item" href="/">Home</a>
+                            <a class="navbar-item dropdown-item" href="/projects">Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            {{ content }}
+        </div>
+        <div id="footer">
+            <div class="content">
+                <p id="footer-copyright">Copyright © 2019 Frostphyr</p>
+                <a class="footer-link" href="https://github.com/Frostphyr">
+                    <img class="logo" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

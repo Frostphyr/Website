@@ -1,0 +1,251 @@
+$primary-color: #222222;
+$secondary-color: #111111;
+$tertiary-color: #333333;
+
+$accent-color: #B9E8EA;
+$secondary-accent-color: #A0CFD1;
+$accent-text-color: #000000;
+
+$text-color: #EEEEEE;
+$secondary-text-color: #FFFFFF;
+$tertiary-text-color: #CCCCCC;
+
+$large-width: 1000px;
+$medium-width: 500px;
+
+/*
+ * Defaults
+ */
+
+@font-face {
+    font-family: "Open Sans";
+    src: url('/OpenSans-Light.ttf');
+}
+
+* {
+    font-family: "Open Sans";
+    color: $text-color;
+    overflow-wrap: break-word;
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea {
+    color: #000000;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    background-color: $primary-color;
+    padding-bottom: 80px;
+    min-height: 100%;
+}
+
+h1, h2, h3, li, p, input {
+    margin: 8px 0;
+}
+
+h1 {
+    font-size: 38px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 12px 0;
+    border-bottom: darken($text-color, 60%) 2px solid;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+li, p, a, label, input {
+    font-size: 18px;
+}
+
+ul, ol {
+    list-style-position: inside;
+    padding: 0 20px;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+a, .a-text {
+    color: $accent-color;
+    text-decoration: none;
+}
+
+a:hover, .a-text:hover {
+    color: $secondary-accent-color;
+}
+
+a img {
+    display: block;
+}
+
+/*
+ * General
+ */
+
+ .button {
+    display: inline-block;
+    background-color: $accent-color;
+    color: $accent-text-color;
+    font-size: 18px;
+    font-weight: bold;
+    border: darken($accent-color, 15%) solid 1px;
+    padding: 8px;
+}
+
+.button:hover {
+    background-color: $secondary-accent-color;
+    color: $accent-text-color;
+    border: darken($secondary-accent-color, 15%) solid 1px;
+}
+
+.logo {
+    height: 32px;
+}
+
+.small-logo {
+    height: 16px;
+}
+
+.line-item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.content {
+    max-width: $large-width;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 16px;
+}
+
+.container {
+    background-color: $tertiary-color;
+    border: lighten($tertiary-color, 10%) solid 1px;
+    margin: 8px 0;
+    padding: 0 8px;
+    overflow: auto;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: lighten($tertiary-color, 10%);
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+%column-2 {
+    width: 45%;
+}
+
+.column-2-left {
+    @extend %column-2;
+    float: left;
+}
+
+.column-2-right {
+    @extend %column-2;
+    float: right;
+}
+
+%column-3 {
+    width: 30%;
+    overflow: auto;
+}
+
+.column-3-left {
+    @extend %column-3;
+    float: left;
+}
+
+.column-3-center {
+    @extend %column-3;
+    margin: auto;
+}
+
+.column-3-right {
+    @extend %column-3;
+    float: right;
+}
+
+.column-3-text {
+    font-size: 20px;
+}
+
+#main-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    padding-right: 24px;
+}
+
+.side-panel {
+    display: inline-block;
+    width: 20%;
+}
+
+.side-panel-header {
+    font-size: 20px;
+    text-align: center;
+}
+
+.dropdown-item {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    
+    z-index: 1;
+    background-color: $secondary-color;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: $large-width) {
+
+    #main-content, .side-panel {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: $medium-width) {
+
+    %column-3 {
+        width: 100%
+    }
+
+}

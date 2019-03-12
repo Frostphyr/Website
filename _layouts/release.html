@@ -1,0 +1,17 @@
+---
+layout: project
+---
+
+<h1>{{ page.title | split: '|' | first | strip }}</h1>
+<p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+<div id="main-content">
+    {{ content }}
+</div><!--
+--><div class="side-panel container">
+    <h2 class='side-panel-header'>Related Links</h2>
+    <ul>
+        {% assign url = page.projects[page.project-id].url %}
+        <li><a href='{{ url }}/download/{{ page.version }}'>Download</a></li>
+        <li><a href='{{ url }}/download/releases'>All Releases</a></li>
+    </ul>
+</div>

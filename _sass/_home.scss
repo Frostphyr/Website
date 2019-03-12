@@ -1,0 +1,35 @@
+#home-intro-text {
+    margin-top: 24px;
+    font-size: 40px;
+}
+
+#home-divider {
+    margin: 18px 0;
+}
+
+.home-news-release-header {
+    overflow: auto;
+}
+
+.home-news-release-info {
+    float: left;
+    margin: 8px 0;
+}
+
+.home-news-release-date {
+    float: right;
+}
+
+.home-news-release-description {
+    font-size: 16px;
+    color: $tertiary-text-color;
+    margin-top: 0;
+}
+
+@media screen and (max-width: $large-width) {
+
+    .home-news-release-info, .home-news-release-date {
+        float: none;
+    }
+
+}

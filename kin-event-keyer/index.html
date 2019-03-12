@@ -1,0 +1,34 @@
+---
+layout: project
+title: KIN Event Keyer
+page: Overview
+---
+
+<h1>KIN Event Keyer</h1>
+<div id="kek-intro">
+    <p id="kek-intro-text" class="line-item">Automates the process of keying in events to KIN (Kmart Information Network).</p><!--
+ --><img id="kek-intro-image" class="line-item" src="/images/KEK-example.png" alt="Example">
+</div>
+<div class="column-3-left">
+    <p class="column-3-text">Use the manual to learn how to use every feature.</p>
+    <a class="button" href="manual">Manual</a>
+</div>
+<div class="column-3-right">
+    <p class="column-3-text">View the source code from the GitHub repository.</p>
+    <a href="https://github.com/Frostphyr/KIN-Event-Keyer">
+        <img class="logo" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
+    </a>
+</div>
+<div class="column-3-center">
+    <p class="column-3-text">Download KIN Event Keyer and start automating your events.</p>
+    {% assign releases = site.pages | where: "layout", "release" | where: "project-id", page.project-id | sort: "date" %}
+    {% assign latest_release = 0 %}
+    {% for release in releases %}
+        {% assign major = release.version | split: "." | first | plus: 0 %}
+        {% if latest_release == 0 or major >= highest_major %}
+            {% assign latest_release = release %}
+            {% assign highest_major = major %}
+        {% endif %}
+    {% endfor %}
+    <a class="button" href="download/{{ latest_release.version }}">Download</a>
+</div>

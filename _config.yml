@@ -1,0 +1,24 @@
+defaults:
+  -
+    scope:
+      path: "kin-event-keyer"
+    values:
+      project-id: 0
+  -
+    scope:
+      path: ""
+    values:
+      projects:
+        - name: KIN Event Keyer
+          url: /kin-event-keyer
+          description: Automates the process of keying in events to KIN (Kmart Information Network).
+          download-content: kek-download.php
+          download-type: jar
+          key-database: kin_event_keyer
+          project-items:
+            - name: Overview
+              url: /kin-event-keyer
+            - name: Manual
+              url: /kin-event-keyer/manual
+            - name: Download
+              url: /kin-event-keyer/download

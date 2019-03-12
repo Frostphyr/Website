@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<div class="project-navbar">
+    {% for item in page.projects[page.project-id].project-items %}
+        <a class="project-navbar-item {% if page.page == item.name %} project-navbar-item-selected {% endif %}" href="{{ item.url }}">{{ item.name }}</a>
+    {% endfor %}
+</div>
+{{ content }}
