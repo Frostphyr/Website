@@ -1,7 +1,3 @@
----
----
-<?php
-
 {% assign releases = site.pages | where: "layout", "release" | where: "project-id", page.project-id | sort: "date" %}
 {% assign latest_release = 0 %}
 {% for release in releases %}
@@ -11,5 +7,3 @@
         {% assign highest_major = major %}
     {% endif %}
 {% endfor %}
-
-include($_SERVER['DOCUMENT_ROOT'] . "/{{ page.projects[page.project-id].url }}/releases/download/{{ latest_release.version }}.php");

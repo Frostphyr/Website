@@ -21,14 +21,6 @@ page: Overview
 </div>
 <div class="column-3-center">
     <p class="column-3-text">Download KIN Event Keyer and start automating your events.</p>
-    {% assign releases = site.pages | where: "layout", "release" | where: "project-id", page.project-id | sort: "date" %}
-    {% assign latest_release = 0 %}
-    {% for release in releases %}
-        {% assign major = release.version | split: "." | first | plus: 0 %}
-        {% if latest_release == 0 or major >= highest_major %}
-            {% assign latest_release = release %}
-            {% assign highest_major = major %}
-        {% endif %}
-    {% endfor %}
-    <a class="button" href="download/{{ latest_release.version }}">Download</a>
+    {% include latest-release.html %}
+    <a class="button" href="releases/download/{{ latest_release.version }}">Download</a>
 </div>

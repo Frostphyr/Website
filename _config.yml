@@ -1,12 +1,11 @@
 permalink: pretty
+exclude: downloads
 defaults:
-  -
-    scope:
+  - scope:
       path: "kin-event-keyer"
     values:
       project-id: 0
-  -
-    scope:
+  - scope:
       path: ""
     values:
       projects:
@@ -22,4 +21,4 @@ defaults:
             - name: Manual
               url: /kin-event-keyer/manual
             - name: Download
-              url: /kin-event-keyer/download
+              url: /kin-event-keyer/releases/download
