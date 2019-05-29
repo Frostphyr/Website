@@ -21,7 +21,9 @@
                         <div class="dropdown line-item">
                             <a class="navbar-item line-item" href="/projects">Projects</a>
                             <div class="dropdown-content">
-                                <a class="navbar-item dropdown-item" href="/kin-event-keyer">KIN Event Keyer</a>
+                                {% for project in page.projects %}
+                                <a class="navbar-item dropdown-item" href="{{ project.url }}">{{ project.name }}</a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
