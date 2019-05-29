@@ -1,17 +1,34 @@
 permalink: pretty
-exclude: downloads
+exclude: ["downloads"]
+
 defaults:
+  - scope:
+      path: "custom-appender"
+    values:
+      project-id: 0
   - scope:
       path: "kin-event-keyer"
     values:
-      project-id: 0
+      project-id: 1
   - scope:
       path: ""
     values:
       projects:
+        - name: CustomAppender
+          url: /custom-appender
+          description: Allows you to create your own Log4j appenders with ease.
+          github-url: https://github.com/Frostphyr/CustomAppender
+          project-items:
+            - name: Overview
+              url: /custom-appender
+            - name: Manual
+              url: /custom-appender/manual
+            - name: Download
+              url: /custom-appender/releases/download
         - name: KIN Event Keyer
           url: /kin-event-keyer
           description: Automates the process of keying in events to KIN (Kmart Information Network).
+          github-url: https://github.com/Frostphyr/KIN-Event-Keyer
           download-content: kek-download.php
           download-type: jar
           key-database: kin_event_keyer

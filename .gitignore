@@ -4,3 +4,7 @@ _site/
 .jekyll-metadata
 _includes/database.php
 downloads/
+
+*.jar
+*.asc
+*.sha512

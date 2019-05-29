@@ -1,0 +1,42 @@
+---
+layout: project
+page: Download
+---
+
+{% assign project = page.projects[page.project-id] %}
+<h1>Download {{ project.name }} {{ page.version }}</h1>
+<p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+<div id='main-content'>
+    <h2>License</h2>
+    <p>
+        {{ project.name }} is licensed under 
+        <a href="{{ page.license-link }}">{{ page.license-name }}</a>.
+    </p>
+    {{ content }}
+    <h2>Download</h2>
+    <p>You may also download the file and source directly: </p>
+    <ul>
+        {% assign path = project.url | append: "/releases/download/" | append: page.version %}
+        {% for file in page.files %}
+        <li>
+            <a href="{{ path }}/{{ file }}" download><code>{{ file }}</code></a>
+             (<a href="{{ path }}/{{ file }}.sha512"><code>SHA-512</code></a>
+             &middot; 
+            <a href="{{ path }}/{{ file }}.asc"><code>ASC</code></a>)
+        </li>
+        {% endfor %}
+    </ul>
+</div><!--
+--><div class="side-panel container">
+    <h2 class="side-panel-header">Related Links</h2>
+    <ul>
+        <li>
+            <a class="link-item" href="{{ project.url }}">
+                <img class="small-logo line-item" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
+                <span class="a-text line-item"> GitHub</span>
+            </a>
+        </li>
+        <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
+        <li><a href="{{ project.url }}/releases">All Releases</a></li>
+    </ul>
+</div>
