@@ -5,7 +5,6 @@ layout: project
 {% assign project = page.projects[page.project-id] %}
 <h1>{{ project.name }} Releases</h1>
 
-
 {% assign releases = site.pages | where: "layout", "release" | where: "project-id", page.project-id | sort: "date" | reverse %}
 {% assign highest_major = 0 %}
 {% for release in releases %}
