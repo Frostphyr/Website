@@ -1,3 +1,3 @@
 ---
-layout: latest-download
+layout: latest-download-php
 ---
