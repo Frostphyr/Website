@@ -1,12 +1,13 @@
 ---
 layout: project
-page: Download
 ---
 
 {% assign project = page.projects[page.project-id] %}
-<h1>Download {{ project.name }} {{ page.version }}</h1>
-<p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
-<div id='main-content'>
+<header>
+    <h1>Download {{ project.name }} {{ page.version }}</h1>
+    <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+</header>
+<div id="main-content">
     <h2>License</h2>
     <p>
         {{ project.name }} is licensed under 

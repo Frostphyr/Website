@@ -1,6 +1,5 @@
 ---
 layout: project
-page: Download
 ---
 
 <?php
