@@ -16,7 +16,7 @@ defaults:
       projects:
         - name: CustomAppender
           url: /custom-appender
-          description: Allows you to create your own Log4j appenders with ease.
+          description: Easily create your own Log4j appender.
           github-url: https://github.com/Frostphyr/CustomAppender
           project-items:
             - name: Overview
