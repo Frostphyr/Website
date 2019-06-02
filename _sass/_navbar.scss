@@ -5,12 +5,12 @@
 
 #navbar-title-text {
     color: $secondary-text-color;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #navbar-title, #navbar-title:link, #navbar-title:visited {
-    padding: 6px 0;
-    
+    padding: 3px 0;
 }
 
 #navbar-items {
@@ -19,7 +19,7 @@
 }
 
 .navbar-item {
-    padding: 17px 20px;
+    padding: 12px;
     font-size: 16px;
     color: $secondary-text-color;
     text-decoration: none;

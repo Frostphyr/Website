@@ -50,19 +50,28 @@ body {
     min-height: 100%;
 }
 
-h1, h2, h3, li, p, input {
-    margin: 8px 0;
-}
-
 h1 {
     font-size: 34px;
+    margin: 24px 0;
     text-align: center;
+}
+
+header {
+    margin: 24px 0;
+}
+
+header h1, header p {
+    margin: 0;
 }
 
 h2 {
     font-size: 26px;
     margin: 12px 0;
     border-bottom: darken($text-color, 60%) 2px solid;
+}
+
+h3, li, p, input {
+    margin: 8px 0;
 }
 
 h3, th, td, code {
@@ -119,14 +128,12 @@ code {
     color: $accent-text-color;
     font-size: 18px;
     font-weight: bold;
-    border: darken($accent-color, 15%) solid 1px;
-    padding: 8px;
+    padding: 12px;
 }
 
 .button:hover {
     background-color: $secondary-accent-color;
     color: $accent-text-color;
-    border: darken($secondary-accent-color, 15%) solid 1px;
 }
 
 .logo {

@@ -2,8 +2,10 @@
 layout: project
 ---
 
-<h1>{{ page.title | split: '|' | first | strip }}</h1>
-<p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+<header>
+    <h1>{{ page.title | split: '|' | first | strip }}</h1>
+    <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+</header>
 <div id="main-content">
     {{ content }}
 </div><!--
