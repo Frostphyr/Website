@@ -1,4 +1,7 @@
-<h1>Download KIN Event Keyer {{ page.version }}</h1>
+<header>
+    <h1>Download KIN Event Keyer {{ page.version }}</h1>
+    <p id='release-date'>Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+</header>
 <div id='main-content'>
     <p>By downloading and using this software, you agree to the <a href='/kin-event-keyer/license'>License Agreement</a>.</p>
     <form action='?' method='post'>
