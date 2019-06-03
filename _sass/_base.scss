@@ -132,6 +132,14 @@ code {
     border: none;
 }
 
+.button * {
+    @extend .line-item;
+    margin: 0;
+    color: $accent-text-color;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .button:hover {
     background-color: $secondary-accent-color;
     color: $accent-text-color;
@@ -139,6 +147,10 @@ code {
 
 .logo {
     height: 32px;
+}
+
+.medium-logo {
+    height: 24px;
 }
 
 .small-logo {
@@ -174,6 +186,10 @@ code {
 .page-divider {
     @extend .divider;
     margin: 24px 0;
+}
+
+.fill-dark {
+    fill: #FFFFFF;
 }
 
 .hidden {
