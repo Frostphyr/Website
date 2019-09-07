@@ -6,6 +6,10 @@ defaults:
       path: "custom-appender"
     values:
       project-id: 0
+      license-name: Apache License 2.0
+      license-url: https://www.apache.org/licenses/LICENSE-2.0
+      maven-groupId: com.frostphyr
+      maven-artifactId: custom-appender
   - scope:
       path: "kin-event-keyer"
     values:
