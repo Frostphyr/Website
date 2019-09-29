@@ -38,7 +38,11 @@ function downloadFile($file) {
         header("Content-Length: " . filesize($file));
         header('Content-Disposition: attachment; filename="' . basename($file) . '"');
         flush();
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
         readfile($file);
+        exit();
     }
 }
 
