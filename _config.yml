@@ -9,7 +9,7 @@ defaults:
       license-name: Apache License 2.0
       license-url: https://www.apache.org/licenses/LICENSE-2.0
       maven-groupId: com.frostphyr
-      maven-artifactId: custom-appender
+      maven-artifactId: customappender
   - scope:
       path: "kin-event-keyer"
     values:
@@ -20,7 +20,7 @@ defaults:
       projects:
         - name: CustomAppender
           url: /custom-appender
-          description: Easily create your own Log4j appender.
+          description: Log however you want with Log4j2.
           github-url: https://github.com/Frostphyr/CustomAppender
           project-items:
             - name: Overview
