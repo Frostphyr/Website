@@ -10,3 +10,11 @@ layout: public-download
   <span class="nt">&lt;version&gt;</span>{{ page.version }}<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div></div>
+<h2>Gradle</h2>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">repositories</span> <span class="o">{</span>
+  <span class="n">mavenCentral</span><span class="o">()</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<br>
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'{{ page.maven-groupId }}:{{ page.maven-artifactId }}:{{ page.version }}'</span>
+</code></pre></div></div>
