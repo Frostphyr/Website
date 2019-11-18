@@ -25,7 +25,7 @@
                 <span class='a-text line-item'> GitHub</span>
             </a>
         </li>
-        <li><a href='/kin-event-keyer/releases/download/{{ page.version }}'>Release Notes</a></li>
+        <li><a href='/kin-event-keyer/releases/{{ page.version }}'>Release Notes</a></li>
         <li><a href='/kin-event-keyer/releases'>All Releases</a></li>
     </ul>
 </div>
