@@ -2,29 +2,26 @@
 layout: project
 ---
 
-{% assign project = page.projects[page.project-id] %}
+{%- include latest-release.html -%}
+{%- assign releases = releases  | reverse -%}
+{%- assign project = page.projects[page.project-id] -%}
+
 <h1>{{ project.name }} Releases</h1>
-
-{% assign releases = site.pages | where: "layout", "release" | where: "project-id", page.project-id | sort: "date" | reverse %}
-{% assign highest_major = 0 %}
-{% for release in releases %}
-    {% assign major = release.version | split: "." | first | plus: 0 %}
-    {% if major > highest_major %}
-        {% assign highest_major = major %}
-    {% endif %}
-{% endfor %}
-
 <ul>
-    {% for i in (0..highest_major) reversed %}
-        {%- for release in releases %}
-            {%- assign major = release.version | split: "." | first | plus: 0 %}
-            {%- if major == i %}
-    <li>
-        {{ project.name }} {{ release.version }} ({{ release.date | date: "%B %-d, %Y" }}) - 
-        <a href="{{ project.url }}/releases/download/{{ release.version }}">Download</a> | 
-        <a href="{{ project.url }}/releases/{{ release.version }}">Release Notes</a>
-    </li>
-            {%- endif %}
-        {%- endfor %}
-    {%- endfor %}
+    {%- for i in (0..highest_major) reversed -%}
+        {%- for release in releases -%}
+            {%- assign major = release.version | split: "." | first | plus: 0 -%}
+            {%- if major == i -%}
+                <li>
+                    {{ project.name }} {{ release.version }} ({{ release.date | date: "%B %-d, %Y" }}) -&nbsp;
+                    {%- for link in page.links -%}
+                        <a href="{{ project.url }}{{ link.path }}{{ release.version }}">{{ link.name }}</a>
+                        {%- if forloop.last == false -%}
+                            &nbsp;|&nbsp;
+                        {%- endif -%}
+                    {%- endfor -%}
+                </li>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endfor -%}
 </ul>
