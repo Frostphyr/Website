@@ -3,8 +3,31 @@ layout: default
 ---
 
 <div class="project-navbar">
-    {% for item in page.projects[page.project-id].project-items %}
-        <a class="project-navbar-item {% if page.page == item.name %} project-navbar-item-selected {% endif %}" href="{{ item.url }}">{{ item.name }}</a>
-    {% endfor %}
+    {%- for item in page.projects[page.project-id].project-items -%}
+        {%- if item.subitems -%}
+            <div class="dropdown line-item project-navbar-dropdown">
+        {%- endif -%}
+        {%- if item.generated -%}
+            {%- include {{ item.url }} -%}
+        {%- else -%}
+            {%- assign item_name = item.name -%}
+            {%- assign item_url = item.url -%}
+            {%- include project-navbar-item.html -%}
+        {%- endif -%}
+        {%- if item.subitems -%}
+            <div class="dropdown-content project-navbar-subitems">
+                {%- for subitem in item.subitems -%}
+                    {%- if subitem.generated -%}
+                        {%- include {{ subitem.url }} -%}
+                    {%- else -%}
+                        {%- assign subitem_name = subitem.name -%}
+                        {%- assign subitem_url = subitem.url -%}
+                        {%- include project-navbar-subitem.html -%}
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
 </div>
 {{ content }}

@@ -1,0 +1,12 @@
+{%- include latest-release.html -%}
+{%- assign releases = releases | reverse -%}
+{%- for major in (0..highest_major) reversed -%}
+    {%- assign major = major | plus: 0 -%}
+    {%- for release in releases -%}
+        {%- assign version = release.version | split: "." | first | plus: 0 -%}
+        {%- if major  == version -%}
+            {%- include {{ visitor }} -%}
+            {%- break -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}

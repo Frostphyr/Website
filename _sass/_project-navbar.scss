@@ -5,23 +5,55 @@
 
 .project-navbar-item, .project-navbar-item:link, .project-navbar-item:visited {
     margin: 20px;
+    padding: 1px;
     color: $text-color;
     text-decoration: none;
     font-size: 26px;
 }
 
-.project-navbar-item:hover {
+.project-navbar-item:hover, .project-navbar-subitem:hover {
     color: $secondary-text-color;
 }
 
 .project-navbar-item-selected:link {
     border-bottom: 1px solid;
-    padding-bottom: 2px;
+    margin-bottom: 19px;
+}
+
+.project-navbar-dropdown {
+    position: relative;
+    vertical-align: top;
+}
+
+.project-navbar-dropdown:hover {
+    margin: 0 14px;
+}
+
+.project-navbar-dropdown:hover .project-navbar-item, .project-navbar-subitems {
+    background-color: lighten($tertiary-color, 10%);
+    border: 1px $secondary-color solid;
+}
+
+.project-navbar-dropdown:hover .project-navbar-item {
+    margin: 0;
+    padding: 0px 6px 1px;
+    border-bottom-style: none;
+}
+
+.project-navbar-subitems {
+    width: 100%;
+    text-align: left;
+    border-top-style: none;
+}
+
+.project-navbar-subitem {
+    margin: 6px;
+    color: $text-color;
 }
 
 @media screen and (max-width: $medium-width) {
 
-    .project-navbar-item {
+    .project-navbar-item, .project-navbar-dropdown {
         display: block;
     }
 
