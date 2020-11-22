@@ -4,8 +4,13 @@ title: CustomAppender
 page: Overview
 ---
 
-{% assign project = page.projects[page.project-id] %}
-<h1>CustomAppender</h1>
+{%- assign project = page.projects[page.project-id] -%}
+{%- include latest-release.html -%}
+
+<header>
+    <h1>CustomAppender</h1>
+    <p id="release-date">Latest release: {{ latest_release.version }}</a> ({{ latest_release.date | date: "%B %-d, %Y" }})</p>
+</header>
 <h4>{{ project.description }}</h4>
 <ul>
     <li>No need to create your own appenders</li>
@@ -26,6 +31,5 @@ page: Overview
 </div>
 <div class="column-3-center">
     <p class="column-3-text">Download CustomAppender and start creating your own Log4j appender.</p>
-    {% include latest-release.html %}
-    <a class="button" href="releases/download/{{ latest_release.version }}">Download</a>
+    <a class="button" href="releases/download">Download</a>
 </div>
