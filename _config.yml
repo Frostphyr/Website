@@ -29,6 +29,11 @@ defaults:
               url: /custom-appender/manual
             - name: Download
               url: /custom-appender/releases/download
+              subitems:
+                - generated: true
+                  url: custom-appender-download.html
+                - name: All releases
+                  url: /custom-appender/releases
         - name: KIN Event Keyer
           url: /kin-event-keyer
           description: Automates the process of keying in events to KIN (Kmart Information Network).
