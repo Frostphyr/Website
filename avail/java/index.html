@@ -1,0 +1,27 @@
+---
+layout: project
+title: Avail
+page: Overview
+---
+
+{%- assign project = page.projects[page.project-id] -%}
+{%- include latest-release.html -%}
+
+<header>
+    <h1>Avail</h1>
+    <h5>Java library of general-purpose utilities</h5>
+    <p id="release-date">Latest release: {{ latest_release.version }}</a> ({{ latest_release.date | date: "%B %-d, %Y" }})</p>
+</header>
+<div class="page-divider"></div>
+<div class="column-3-left">
+    <p class="column-3-header">Get Started</p>
+    <p class="column-3-text">To view the various utilities and how to use them, look at the <a href="/avail/java/releases/docs/{{ latest_release.version }}">documentation</a>.</p>
+</div>
+<div class="column-3-right">
+    <p class="column-3-header">Open Source</p>
+    <p class="column-3-text">Contribute or view the git repository on <a href="https://github.com/Frostphyr/avail-java">GitHub</a>.</p>
+</div>
+<div class="column-3-center">
+    <p class="column-3-header">Download</p>
+    <p class="column-3-text">View the different ways to download and use the latest version of Avail <a href="/avail/java/releases/download/{{ latest_release.version }}">here</a>.</p>
+</div>

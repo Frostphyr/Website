@@ -3,9 +3,17 @@ exclude: ["downloads"]
 
 defaults:
   - scope:
-      path: "custom-appender"
+      path: "avail/java"
     values:
       project-id: 0
+      license-name: Apache License 2.0
+      license-url: https://www.apache.org/licenses/LICENSE-2.0
+      maven-groupId: com.frostphyr
+      maven-artifactId: avail
+  - scope:
+      path: "custom-appender"
+    values:
+      project-id: 1
       license-name: Apache License 2.0
       license-url: https://www.apache.org/licenses/LICENSE-2.0
       maven-groupId: com.frostphyr
@@ -13,11 +21,32 @@ defaults:
   - scope:
       path: "kin-event-keyer"
     values:
-      project-id: 1
+      project-id: 2
   - scope:
       path: ""
     values:
       projects:
+        - name: Avail
+          url: /avail/java
+          description: Library of general-purpose utilities
+          github-url: https://github.com/Frostphyr/avail-java
+          project-items:
+            - name: Overview
+              url: /avail/java
+            - generated: true
+              url: avail/avail-latest-docs.html
+              subitems:
+                - generated : true
+                  url: avail/avail-docs.html
+                - name: All releases
+                  url: /avail/java/releases
+            - name: Download
+              url: /avail/java/releases/download
+              subitems:
+                - generated : true
+                  url: avail/avail-download.html
+                - name: All releases
+                  url: /avail/java/releases
         - name: CustomAppender
           url: /custom-appender
           description: Log however you want with Log4j2.

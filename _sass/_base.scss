@@ -70,7 +70,12 @@ h2 {
     border-bottom: darken($text-color, 60%) 2px solid;
 }
 
-h3, li, p, input {
+h5 {
+    text-align: center;
+    font-size: 20px;
+}
+
+h3, h4, li, p, input {
     margin: 8px 0;
 }
 
@@ -238,6 +243,12 @@ code {
 .column-3-right {
     @extend %column-3;
     float: right;
+}
+
+.column-3-header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .column-3-text {
