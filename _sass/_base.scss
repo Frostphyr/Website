@@ -256,15 +256,13 @@ code {
 }
 
 #main-content {
-    display: inline-block;
     vertical-align: top;
-    width: 78%;
     padding-right: 24px;
+    overflow: hidden;
 }
 
 .side-panel {
-    display: inline-block;
-    width: 22%;
+    float: right;
 }
 
 .side-panel-header {

@@ -7,6 +7,19 @@ layout: project
     <h1>Download {{ project.name }} {{ page.version }}</h1>
     <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
 </header>
+<div class="side-panel container">
+    <h2 class="side-panel-header">Related Links</h2>
+    <ul>
+        <li>
+            <a class="link-item" href="{{ project.github-url }}">
+                <img class="small-logo line-item" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
+                <span class="a-text line-item"> GitHub</span>
+            </a>
+        </li>
+        <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
+        <li><a href="{{ project.url }}/releases">All Releases</a></li>
+    </ul>
+</div>
 <div id="main-content">
     <h2>License</h2>
     <p>
@@ -26,18 +39,5 @@ layout: project
             <a href="{{ path }}/{{ file }}.asc"><code>ASC</code></a>)
         </li>
         {% endfor %}
-    </ul>
-</div><!--
---><div class="side-panel container">
-    <h2 class="side-panel-header">Related Links</h2>
-    <ul>
-        <li>
-            <a class="link-item" href="{{ project.github-url }}">
-                <img class="small-logo line-item" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
-                <span class="a-text line-item"> GitHub</span>
-            </a>
-        </li>
-        <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
-        <li><a href="{{ project.url }}/releases">All Releases</a></li>
     </ul>
 </div>
