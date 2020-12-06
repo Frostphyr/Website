@@ -4,22 +4,22 @@ title: Projects | Frostphyr
 ---
 
 <h1>Projects</h1>
-{% assign middle = page.projects | size | plus: 1 | divided_by: 2 %}
+{%- assign middle = page.projects | size | plus: 1 | divided_by: 2 -%}
 <div class="column-2-left">
-    {% for project in page.projects limit: middle %}
+    {%- for project in page.projects limit: middle -%}
         <div class="container">
             <a class="project-name" href="{{ project.url }}">{{ project.name }}</a>
             <div class="divider"></div>
             <p>{{ project.description }}</p>
         </div>
-    {% endfor %}
+    {%- endfor -%}
 </div>
 <div class="column-2-right">
-    {% for project in page.projects offset: middle %}
+    {%- for project in page.projects offset: middle -%}
         <div class="container">
             <a class="project-name" href="{{ project.url }}">{{ project.name }}</a>
             <div class="divider"></div>
             <p>{{ project.description }}</p>
         </div>
-    {% endfor %}
+    {%- endfor -%}
 </div>

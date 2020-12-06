@@ -9,7 +9,7 @@ layout: project
 <div class="side-panel container">
     <h2 class='side-panel-header'>Related Links</h2>
     <ul>
-        {% assign url = page.projects[page.project-id].url %}
+        {%- assign url = page.projects[page.project-id].url -%}
         <li><a href='{{ url }}/releases/download/{{ page.version }}'>Download</a></li>
         <li><a href='{{ url }}/releases'>All Releases</a></li>
     </ul>

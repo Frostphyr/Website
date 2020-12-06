@@ -2,7 +2,7 @@
 layout: project
 ---
 
-{% assign project = page.projects[page.project-id] %}
+{%- assign project = page.projects[page.project-id] -%}
 <header>
     <h1>Download {{ project.name }} {{ page.version }}</h1>
     <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
@@ -30,14 +30,14 @@ layout: project
     <h2>Download</h2>
     <p>You may also directly download the files:</p>
     <ul>
-        {% assign path = project.url | append: "/releases/download/" | append: page.version %}
-        {% for file in page.files %}
+        {%- assign path = project.url | append: "/releases/download/" | append: page.version -%}
+        {%- for file in page.files -%}
         <li>
             <a href="{{ path }}/{{ file }}" download><code>{{ file }}</code></a>
              (<a href="{{ path }}/{{ file }}.sha512"><code>SHA-512</code></a>
              &middot; 
             <a href="{{ path }}/{{ file }}.asc"><code>ASC</code></a>)
         </li>
-        {% endfor %}
+        {%- endfor -%}
     </ul>
 </div>

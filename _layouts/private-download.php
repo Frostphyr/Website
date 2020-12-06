@@ -4,10 +4,10 @@ layout: project
 
 <?php
 
-{% assign project = page.projects[page.project-id] %}
+{%- assign project = page.projects[page.project-id] -%}
 
 function validateKey($key) {
-    {% include database.php %}
+    {%- include database.php -%}
     $mysqli = new mysqli($host, $username, $password, "license_keys");
     if ($mysqli->connect_error) {
         $return = "Error connecting to database. Please retry later.";
@@ -30,11 +30,11 @@ function validateKey($key) {
 function downloadFile($file) {
     if (file_exists($file)) {
         header("Content-Description: File Transfer");
-        {% if project.download-type == "jar" %}
+        {%- if project.download-type == "jar" -%}
             header("Content-Type: application/java-archive");
-        {% else %}
+        {%- else -%}
             header("Content-Type: application/octet-stream");
-        {% endif %}
+        {%- endif -%}
         header("Content-Length: " . filesize($file));
         header('Content-Disposition: attachment; filename="' . basename($file) . '"');
         flush();

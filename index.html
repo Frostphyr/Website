@@ -11,12 +11,12 @@ title: Frostphyr
 <div class="page-divider"></div>
 <div class="container">
     <h2>News</h2>
-    {% assign releases = site.pages | where: "layout", "release" | sort: "date" | reverse %}
-    {% for release in releases limit: 3 %}
-        {% assign project = page.projects[release.project-id] %}
-        {% if forloop.first != true %}
+    {%- assign releases = site.pages | where: "layout", "release" | sort: "date" | reverse -%}
+    {%- for release in releases limit: 3 -%}
+        {%- assign project = page.projects[release.project-id] -%}
+        {%- if forloop.first != true -%}
             <div class="divider"></div>
-        {% endif %}
+        {%- endif -%}
         <div class="home-news-release-header">
             <p class="home-news-release-info">
                 <a href="{{ project.url }}">{{ project.name }}</a>
@@ -27,5 +27,5 @@ title: Frostphyr
             <p class="home-news-release-date">{{ release.date | date: "%B %-d, %Y" }}</p>
         </div>    
         <p class="home-news-release-description">{{ release.description }}</p>
-    {% endfor %}
+    {%- endfor -%}
 </div>
