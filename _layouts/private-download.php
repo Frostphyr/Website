@@ -4,7 +4,7 @@ layout: project
 
 <?php
 
-{%- assign project = page.projects[page.project-id] -%}
+{% assign project = page.projects[page.project-id] %}
 
 function validateKey($key) {
     {%- include database.php -%}
