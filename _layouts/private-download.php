@@ -7,7 +7,7 @@ layout: project
 {% assign project = page.projects[page.project-id] %}
 
 function validateKey($key) {
-    {%- include database.php -%}
+    {%- include private/database.php -%}
     $mysqli = new mysqli($host, $username, $password, "license_keys");
     if ($mysqli->connect_error) {
         $return = "Error connecting to database. Please retry later.";
