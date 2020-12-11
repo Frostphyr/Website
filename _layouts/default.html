@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,11 +23,12 @@
                         <div class="dropdown line-item">
                             <a class="navbar-item line-item" href="/projects">Projects</a>
                             <div class="dropdown-content">
-                                {% for project in page.projects %}
-                                <a class="navbar-item dropdown-item" href="{{ project.url }}">{{ project.name }}</a>
-                                {% endfor %}
+                                {%- for project in page.projects -%}
+                                    <a class="navbar-item dropdown-item" href="{{ project.url }}">{{ project.name }}</a>
+                                {%- endfor -%}
                             </div>
                         </div>
+                        <a class="navbar-item line-item" href="/contact">Contact</a>
                     </div>
                     <div id="navbar-items-collapsed">
                         <input id="navbar-collapsed-dropdown-toggle" class="hidden" type="checkbox"/>
@@ -33,6 +36,7 @@
                         <div id="navbar-collapsed-dropdown">
                             <a class="navbar-item dropdown-item" href="/">Home</a>
                             <a class="navbar-item dropdown-item" href="/projects">Projects</a>
+                            <a class="navbar-item dropdown-item" href="/contact">Contact</a>
                         </div>
                     </div>
                 </div>
@@ -43,7 +47,7 @@
         </div>
         <div id="footer">
             <div class="content">
-                <p id="footer-copyright">Copyright © 2019 Frostphyr</p>
+                <p id="footer-copyright">Copyright © {{ site.time | date: '%Y' }} Frostphyr</p>
                 <a class="footer-link" href="https://github.com/Frostphyr">
                     <img class="logo" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
                 </a>

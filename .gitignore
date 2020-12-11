@@ -4,6 +4,7 @@ _site/
 .jekyll-metadata
 _includes/private
 downloads/
+vendor/
 
 *.jar
 *.asc
