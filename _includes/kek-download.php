@@ -15,6 +15,7 @@
         <li><a href='/kin-event-keyer/releases'>All Releases</a></li>
     </ul>
 </div>
+<div class="empty-divider right"></div>
 <div id='main-content'>
     <p>By downloading and using this software, you agree to the <a href='/kin-event-keyer/license'>License Agreement</a>.</p>
     <form action='?' method='post'>
