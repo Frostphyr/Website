@@ -24,8 +24,10 @@ layout: project
 <div id="main-content">
     <h2>License</h2>
     <p>
+        {%- assign license = page.licenses[project.license-id] -%}
         {{ project.name }} is licensed under 
-        <a href="{{ page.license-url }}">{{ page.license-name }}</a>.
+        <a href="{{ license.url }}">{{ license.name }}</a>.&nbsp;
+        {%- include {{ license.description-url }} -%}
     </p>
     {{ content }}
     <h2>Download</h2>

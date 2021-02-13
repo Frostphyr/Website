@@ -6,16 +6,12 @@ defaults:
       path: "avail/java"
     values:
       project-id: 0
-      license-name: Apache License 2.0
-      license-url: https://www.apache.org/licenses/LICENSE-2.0
       maven-groupId: com.frostphyr
       maven-artifactId: avail
   - scope:
       path: "custom-appender"
     values:
       project-id: 1
-      license-name: Apache License 2.0
-      license-url: https://www.apache.org/licenses/LICENSE-2.0
       maven-groupId: com.frostphyr
       maven-artifactId: customappender
   - scope:
@@ -25,11 +21,16 @@ defaults:
   - scope:
       path: ""
     values:
+      licenses:
+        - name: Apache License 2.0
+          url: https://www.apache.org/licenses/LICENSE-2.0
+          description-url: apache2-description.html
       projects:
         - name: Avail
           url: /avail/java
           description: Library of general-purpose utilities
           github-url: https://github.com/Frostphyr/avail-java
+          license-id: 0
           project-items:
             - name: Overview
               url: /avail/java
@@ -51,6 +52,7 @@ defaults:
           url: /custom-appender
           description: Log however you want with Log4j2.
           github-url: https://github.com/Frostphyr/CustomAppender
+          license-id: 0
           project-items:
             - name: Overview
               url: /custom-appender
