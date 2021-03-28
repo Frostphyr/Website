@@ -18,6 +18,9 @@ layout: project
             </a>
         </li>
         <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
+        {%- for link in page.related-links -%}
+            <li><a href="{{ link.url | render_variables }}">{{ link.name }}</a></li>
+        {%- endfor -%}
         <li><a href="{{ project.url }}/releases">All Releases</a></li>
     </ul>
 </div>

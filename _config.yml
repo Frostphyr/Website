@@ -46,6 +46,9 @@ defaults:
     values:
       layout: release
       title: Release Notes %VERSION% | Avail
+      related-links:
+        - name: Documentation
+          url: /avail/java/releases/docs/%VERSION%
   - scope:
       path: "avail/java/releases/download"
     values:
