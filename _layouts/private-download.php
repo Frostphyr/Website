@@ -4,15 +4,13 @@ layout: project
 
 <?php
 
-{% assign project = page.projects[page.project-id] %}
-
 function validateKey($key) {
     {%- include private/database.php -%}
     $mysqli = new mysqli($host, $username, $password, "license_keys");
     if ($mysqli->connect_error) {
         $return = "Error connecting to database. Please retry later.";
     } else {
-        if ($stmt = $mysqli->prepare("SELECT license_key FROM {{ project.key-database }} WHERE license_key=?")) {
+        if ($stmt = $mysqli->prepare("SELECT license_key FROM {{ page.key-database }} WHERE license_key=?")) {
             if ($stmt->bind_param("s", $key)) {
                 if ($stmt->execute()) {
                     if ($result = $stmt->get_result()) {
@@ -30,7 +28,7 @@ function validateKey($key) {
 function downloadFile($file) {
     if (file_exists($file)) {
         header("Content-Description: File Transfer");
-        {%- if project.download-type == "jar" -%}
+        {%- if page.download-type == "jar" -%}
             header("Content-Type: application/java-archive");
         {%- else -%}
             header("Content-Type: application/octet-stream");
@@ -51,13 +49,14 @@ $key = filter_input(INPUT_POST, "key");
 if ($key !== FALSE && $key !== NULL) {
     $result = validateKey($key);
     if ($result === TRUE) {
-        downloadFile($_SERVER['DOCUMENT_ROOT'] . "/../downloads/{{ project.name }}/{{ project.name }}-{{ page.version }}.{{ project.download-type}}");
+        {% assign name = page.projects[page.project-id].name %}
+        downloadFile($_SERVER['DOCUMENT_ROOT'] . "/../downloads/{{ name }}/{{ name }}-{{ page.version }}.{{ page.download-type}}");
     } else {
         $error = $result;
-        echo "{% include {{ project.download-content }} %}";
+        echo "{% include {{ page.download-content }} %}";
     }
 } else {
-    echo "{% include {{ project.download-content }} %}";
+    echo "{% include {{ page.download-content }} %}";
 }
 
 ?>

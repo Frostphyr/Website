@@ -3,15 +3,15 @@ layout: project
 ---
 
 <header>
-    <h1>{{ page.title | split: '|' | first | strip }}</h1>
+    <h1>Release Notes {{ page.version }}</h1>
     <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
 </header>
 <div class="side-panel container">
-    <h2 class='side-panel-header'>Related Links</h2>
+    <h2 class="side-panel-header">Related Links</h2>
     <ul>
         {%- assign url = page.projects[page.project-id].url -%}
-        <li><a href='{{ url }}/releases/download/{{ page.version }}'>Download</a></li>
-        <li><a href='{{ url }}/releases'>All Releases</a></li>
+        <li><a href="{{ url }}/releases/download/{{ page.version }}">Download</a></li>
+        <li><a href="{{ url }}/releases">All Releases</a></li>
     </ul>
 </div>
 <div class="empty-divider right"></div>

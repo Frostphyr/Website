@@ -4,7 +4,6 @@ title: Avail
 page: Overview
 ---
 
-{%- assign project = page.projects[page.project-id] -%}
 {%- include latest-release.html -%}
 
 <header>
@@ -19,7 +18,7 @@ page: Overview
 </div>
 <div class="column-3-right">
     <p class="column-3-header">Open Source</p>
-    <p class="column-3-text">Contribute or view the git repository on <a href="https://github.com/Frostphyr/avail-java">GitHub</a>.</p>
+    <p class="column-3-text">Contribute or view the git repository on <a href="{{ page.github-url }}">GitHub</a>.</p>
 </div>
 <div class="column-3-center">
     <p class="column-3-header">Download</p>

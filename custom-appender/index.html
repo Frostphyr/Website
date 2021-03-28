@@ -4,14 +4,13 @@ title: CustomAppender
 page: Overview
 ---
 
-{%- assign project = page.projects[page.project-id] -%}
 {%- include latest-release.html -%}
 
 <header>
     <h1>CustomAppender</h1>
     <p id="release-date">Latest release: {{ latest_release.version }}</a> ({{ latest_release.date | date: "%B %-d, %Y" }})</p>
 </header>
-<h4>{{ project.description }}</h4>
+<h4>{{ page.projects[page.project-id].description }}</h4>
 <ul>
     <li>No need to create your own appenders</li>
     <li>Configure CustomAppender to invoke any method with formatted log messages</li>
@@ -24,7 +23,7 @@ page: Overview
 </div>
 <div class="column-3-right">
     <p class="column-3-text">Contribute or view the source code from the GitHub repository.</p>
-    <a class="button" href="https://github.com/Frostphyr/CustomAppender">
+    <a class="button" href="{{ page.github-url }}">
         <img class="medium-logo" src="/images/GitHub-mark-dark.svg" alt="GitHub"/>
         <p>GitHub</p>
     </a>

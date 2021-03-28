@@ -2,7 +2,8 @@
 layout: project
 ---
 
-{%- assign project = page.projects[page.project-id] -%}
+{% assign project = page.projects[page.project-id] %}
+
 <header>
     <h1>Download {{ project.name }} {{ page.version }}</h1>
     <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
@@ -11,7 +12,7 @@ layout: project
     <h2 class="side-panel-header">Related Links</h2>
     <ul>
         <li>
-            <a class="link-item" href="{{ project.github-url }}">
+            <a class="link-item" href="{{ page.github-url }}">
                 <img class="small-logo line-item" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
                 <span class="a-text line-item"> GitHub</span>
             </a>
@@ -24,7 +25,7 @@ layout: project
 <div id="main-content">
     <h2>License</h2>
     <p>
-        {%- assign license = page.licenses[project.license-id] -%}
+        {%- assign license = page.licenses[page.license-id] -%}
         {{ project.name }} is licensed under 
         <a href="{{ license.url }}">{{ license.name }}</a>.&nbsp;
         {%- include {{ license.description-url }} -%}
@@ -35,12 +36,13 @@ layout: project
     <ul>
         {%- assign path = project.url | append: "/releases/download/" | append: page.version -%}
         {%- for file in page.files -%}
-        <li>
-            <a href="{{ path }}/{{ file }}" download><code>{{ file }}</code></a>
-             (<a href="{{ path }}/{{ file }}.sha512"><code>SHA-512</code></a>
-             &middot; 
-            <a href="{{ path }}/{{ file }}.asc"><code>ASC</code></a>)
-        </li>
+        {%- assign rendered_file = file | render_variables -%}
+            <li>
+                <a href="{{ path }}/{{ rendered_file }}" download><code>{{ rendered_file }}</code></a>
+                (<a href="{{ path }}/{{ rendered_file }}.sha512"><code>SHA-512</code></a>
+                &middot; 
+                <a href="{{ path }}/{{ rendered_file }}.asc"><code>ASC</code></a>)
+            </li>
         {%- endfor -%}
     </ul>
 </div>
