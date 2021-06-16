@@ -45,23 +45,23 @@ defaults:
       path: "avail/java/releases"
     values:
       layout: release
-      title: Release Notes %VERSION% | Avail
+      title: Release Notes {{ page.version }} | Avail
       related-links:
         - name: Documentation
-          url: /avail/java/releases/docs/%VERSION%
+          url: /avail/java/releases/docs/{{ page.version | major }}.{{ page.version | minor }}
   - scope:
       path: "avail/java/releases/download"
     values:
       layout: avail-download
-      title: Download %VERSION% | Avail
+      title: Download {{ page.version }} | Avail
       page: Download
       license-id: 0
       maven-groupId: com.frostphyr
       maven-artifactId: avail
       files:
-        - avail-%VERSION%.jar
-        - avail-%VERSION%-sources.jar
-        - avail-%VERSION%-javadoc.jar
+        - avail-{{ page.version }}.jar
+        - avail-{{ page.version }}-sources.jar
+        - avail-{{ page.version }}-javadoc.jar
   - scope:
       path: "custom-appender"
     values:
@@ -83,20 +83,20 @@ defaults:
       path: "custom-appender/releases"
     values:
       layout: release
-      title: Release Notes %VERSION% | CustomAppender
+      title: Release Notes {{ page.version }} | CustomAppender
   - scope:
       path: "custom-appender/releases/download"
     values:
       layout: custom-appender-download
-      title: Download %VERSION% | CustomAppender
+      title: Download {{ page.version }} | CustomAppender
       page: Download
       license-id: 0
       maven-groupId: com.frostphyr
       maven-artifactId: customappender
       files:
-        - customappender-%VERSION%.jar
-        - customappender-%VERSION%-sources.jar
-        - customappender-%VERSION%-javadoc.jar
+        - customappender-{{ page.version }}.jar
+        - customappender-{{ page.version }}-sources.jar
+        - customappender-{{ page.version }}-javadoc.jar
   - scope:
       path: "kin-event-keyer"
     values:
@@ -116,10 +116,10 @@ defaults:
       path: "kin-event-keyer/releases"
     values:
       layout: release
-      title: Release Notes %VERSION% | KIN Event Keyer
+      title: Release Notes {{ page.version }} | KIN Event Keyer
   - scope:
       path: "kin-event-keyer/releases/download"
     values:
       layout: private-download
-      title: Download %VERSION% | KIN Event Keyer
+      title: Download {{ page.version }} | KIN Event Keyer
       page: Download

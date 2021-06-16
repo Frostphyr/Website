@@ -19,7 +19,7 @@ layout: project
         </li>
         <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
         {%- for link in page.related-links -%}
-            <li><a href="{{ link.url | render_variables }}">{{ link.name }}</a></li>
+            <li><a href="{{ link.url | liquify }}">{{ link.name }}</a></li>
         {%- endfor -%}
         <li><a href="{{ project.url }}/releases">All Releases</a></li>
     </ul>
@@ -39,12 +39,12 @@ layout: project
     <ul>
         {%- assign path = project.url | append: "/releases/download/" | append: page.version -%}
         {%- for file in page.files -%}
-        {%- assign rendered_file = file | render_variables -%}
+        {%- assign generated_file = file | liquify -%}
             <li>
-                <a href="{{ path }}/{{ rendered_file }}" download><code>{{ rendered_file }}</code></a>
-                (<a href="{{ path }}/{{ rendered_file }}.sha512"><code>SHA-512</code></a>
+                <a href="{{ path }}/{{ generated_file }}" download><code>{{ generated_file }}</code></a>
+                (<a href="{{ path }}/{{ generated_file }}.sha512"><code>SHA-512</code></a>
                 &middot; 
-                <a href="{{ path }}/{{ rendered_file }}.asc"><code>ASC</code></a>)
+                <a href="{{ path }}/{{ generated_file }}.asc"><code>ASC</code></a>)
             </li>
         {%- endfor -%}
     </ul>

@@ -1,0 +1,23 @@
+.major-version {
+    display: inline-block;
+}
+
+.minor-versions, .releases {
+    padding: 0 24px;
+}
+
+.major-version-checkbox:checked + .collapse-labels + .minor-versions {
+    display: none;
+}
+
+.minor-version-checkbox:checked + .collapse-labels + .releases {
+    display: none;
+}
+
+.major-version, .major-collapse-label {
+    font-size: 24px;
+}
+
+.minor-version, .minor-collapse-label {
+    font-size: 20px;
+}

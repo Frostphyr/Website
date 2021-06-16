@@ -1,4 +1,4 @@
 {%- include latest-release.html -%}
 {%- assign item_name = "Documentation" -%}
-{%- capture item_url -%}/avail/java/releases/docs/{{ latest_release.version }}{%- endcapture -%}
+{%- capture item_url -%}/avail/java/releases/docs/{{ latest_release.version | major }}.{{ latest_release.version | minor }}{%- endcapture -%}
 {%- include project-navbar-item.html -%}

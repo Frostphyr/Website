@@ -12,7 +12,7 @@ layout: project
         {%- assign url = page.projects[page.project-id].url -%}
         <li><a href="{{ url }}/releases/download/{{ page.version }}">Download</a></li>
         {%- for link in page.related-links -%}
-            <li><a href="{{ link.url | render_variables }}">{{ link.name }}</a></li>
+            <li><a href="{{ link.url | liquify }}">{{ link.name }}</a></li>
         {%- endfor -%}
         <li><a href="{{ url }}/releases">All Releases</a></li>
     </ul>
