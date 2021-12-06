@@ -1,0 +1,24 @@
+name: KIN Event Keyer
+path: /kin-event-keyer
+description: Automates the process of keying in events to KIN (Kmart Information Network)
+github_url: https://github.com/Frostphyr/KIN-Event-Keyer
+download_type: jar
+key_database: kin_event_keyer
+download_related_links:
+  - name: Release Notes
+    url: /kin-event-keyer/release-notes#{{ page.version }}
+  - name: Manual
+    url: /kin-event-keyer/manual
+  - name: All Releases
+    url: /kin-event-keyer/releases
+navbar_items:
+  - name: Download
+    url: /kin-event-keyer/download
+    subitems:
+      - name: '{{ version }}'
+        url: /kin-event-keyer/download/{{ version }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /kin-event-keyer/releases
+  - name: Manual
+    url: /kin-event-keyer/manual

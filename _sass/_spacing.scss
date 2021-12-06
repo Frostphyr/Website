@@ -1,0 +1,73 @@
+$base: 8px;
+
+.margin-small {
+  margin: $base;
+}
+
+.margin-large {
+  margin: $base * 2;
+}
+
+.margin-x-small {
+  margin-left: $base;
+  margin-right: $base;
+}
+
+.margin-x-large {
+  margin-left: $base * 2;
+  margin-right: $base * 2;
+}
+
+.margin-y-small {
+  margin-top: $base;
+  margin-bottom: $base;
+}
+
+.margin-y-large {
+  margin-top: $base * 2;
+  margin-bottom: $base * 2;
+}
+
+.margin-left-small {
+  margin-left: $base;
+}
+
+.margin-bottom-large {
+  margin-bottom: $base * 2;
+}
+
+.padding-small {
+  padding: $base;
+}
+
+.padding-large {
+  padding: $base * 2;
+}
+
+.padding-x-small {
+  padding-left: $base;
+  padding-right: $base;
+}
+
+.padding-x-large {
+  padding-left: $base * 2;
+  padding-right: $base * 2;
+}
+
+.padding-y-small {
+  padding-top: $base;
+  padding-bottom: $base;
+}
+
+.padding-y-large {
+  padding-top: $base * 2;
+  padding-bottom: $base * 2;
+}
+
+.padding-right-xsmall {
+  padding-right: $base / 2;
+}
+
+.padding-right-large {
+  padding-right: $base * 2;
+}

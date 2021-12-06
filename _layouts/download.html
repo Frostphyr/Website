@@ -1,0 +1,23 @@
+---
+layout: base
+---
+
+{%- assign info = site.data[page.project].info -%}
+
+<header class="text-center">
+  <h1>Download {{ info.name }} {{ page.version }}</h1>
+  <p class="subtext">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
+</header>
+<div>
+  <div class="side-panel container right margin-left-small">
+    <p class="text-center"><strong>Related Links</strong></p>
+    <ul>
+      {%- for link in info.download_related_links -%}
+        <li><a class="text-link padding-right-large" href="{{ link.url | liquify }}">{{ link.name }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+  <div class="scrollable">
+    {{ content }}
+  </div>
+</div>

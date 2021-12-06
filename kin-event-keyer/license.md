@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: base
 title: License Agreement | KIN Event Keyer
 ---
 

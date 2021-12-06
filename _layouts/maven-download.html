@@ -3,18 +3,33 @@ layout: public-download
 ---
 
 {{ content }}
+{%- assign info = site.data[page.project].info -%}
 <h2>Maven</h2>
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>{{ page.maven-groupId }}<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>{{ page.maven-artifactId }}<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>{{ page.version }}<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-</code></pre></div></div>
+<p>Add the following dependency:</p>
+{%- capture maven -%}
+```xml
+<dependency>
+  <groupId>{{ info.maven_groupId }}</groupId>
+  <artifactId>{{ info.maven_artifactId }}</artifactId>
+  <version>{{ page.version }}</version>
+</dependency>
+```
+{%- endcapture -%}
+{{ maven | markdownify }}
 <h2>Gradle</h2>
-<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">repositories</span> <span class="o">{</span>
-  <span class="n">mavenCentral</span><span class="o">()</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<br>
-<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">implementation</span> <span class="s1">'{{ page.maven-groupId }}:{{ page.maven-artifactId }}:{{ page.version }}'</span>
-</code></pre></div></div>
+<p>Ensure the Maven Central repository is declared:</p>
+{%- capture gradle_repository -%}
+```gradle
+repositories {
+  mavenCentral()
+}
+```
+{%- endcapture -%}
+{{ gradle_repository | markdownify }}
+<p>Add the following dependency:</p>
+{%- capture gradle_dependency -%}
+```gradle
+implementation '{{ info.maven_groupId }}:{{ info.maven_artifactId }}:{{ page.version }}'
+```
+{%- endcapture -%}
+{{ gradle_dependency | markdownify }}

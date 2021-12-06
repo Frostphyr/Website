@@ -1,125 +1,24 @@
 permalink: pretty
 exclude: ["downloads"]
+plugins:
+  - liquid-arrays
 
 defaults:
   - scope:
-      path: ""
-    values:
-      projects:
-        - name: Avail
-          url: /avail/java
-          description: Library of general-purpose utilities
-        - name: CustomAppender
-          url: /custom-appender
-          description: Log however you want with Log4j2
-        - name: KIN Event Keyer
-          url: /kin-event-keyer
-          description: Automates the process of keying in events to KIN (Kmart Information Network)
-      licenses:
-        - name: Apache License 2.0
-          url: https://www.apache.org/licenses/LICENSE-2.0
-          description-url: apache2-description.html
-  - scope:
       path: "avail/java"
     values:
-      project-id: 0
-      github-url: https://github.com/Frostphyr/avail-java
-      project-items:
-        - name: Overview
-          url: /avail/java
-        - generated: true
-          url: avail/avail-latest-docs.html
-          subitems:
-            - generated : true
-              url: avail/avail-docs.html
-            - name: All releases
-              url: /avail/java/releases
-        - name: Download
-          url: /avail/java/releases/download
-          subitems:
-            - generated : true
-              url: avail/avail-download.html
-            - name: All releases
-              url: /avail/java/releases
-  - scope:
-      path: "avail/java/releases"
-    values:
-      layout: release
-      title: Release Notes {{ page.version }} | Avail
-      related-links:
-        - name: Documentation
-          url: /avail/java/releases/docs/{{ page.version | major }}.{{ page.version | minor }}
-  - scope:
-      path: "avail/java/releases/download"
-    values:
-      layout: avail-download
-      title: Download {{ page.version }} | Avail
-      page: Download
-      license-id: 0
-      maven-groupId: com.frostphyr
-      maven-artifactId: avail
-      files:
-        - avail-{{ page.version }}.jar
-        - avail-{{ page.version }}-sources.jar
-        - avail-{{ page.version }}-javadoc.jar
-  - scope:
-      path: "custom-appender"
-    values:
-      project-id: 1
-      github-url: https://github.com/Frostphyr/CustomAppender
-      project-items:
-        - name: Overview
-          url: /custom-appender
-        - name: Manual
-          url: /custom-appender/manual
-        - name: Download
-          url: /custom-appender/releases/download
-          subitems:
-            - generated: true
-              url: custom-appender-download.html
-            - name: All releases
-              url: /custom-appender/releases
-  - scope:
-      path: "custom-appender/releases"
-    values:
-      layout: release
-      title: Release Notes {{ page.version }} | CustomAppender
-  - scope:
-      path: "custom-appender/releases/download"
-    values:
-      layout: custom-appender-download
-      title: Download {{ page.version }} | CustomAppender
-      page: Download
-      license-id: 0
-      maven-groupId: com.frostphyr
-      maven-artifactId: customappender
-      files:
-        - customappender-{{ page.version }}.jar
-        - customappender-{{ page.version }}-sources.jar
-        - customappender-{{ page.version }}-javadoc.jar
+      project: avail
   - scope:
       path: "kin-event-keyer"
     values:
-      project-id: 2
-      github-url: https://github.com/Frostphyr/KIN-Event-Keyer
-      download-content: kek-download.php
-      download-type: jar
-      key-database: kin_event_keyer
-      project-items:
-        - name: Overview
-          url: /kin-event-keyer
-        - name: Manual
-          url: /kin-event-keyer/manual
-        - name: Download
-          url: /kin-event-keyer/releases/download
+      project: kin-event-keyer
   - scope:
-      path: "kin-event-keyer/releases"
+      path: "avail/java/download"
     values:
-      layout: release
-      title: Release Notes {{ page.version }} | KIN Event Keyer
+      layout: avail-download
+      title: Download {{ page.version }} | Avail
   - scope:
-      path: "kin-event-keyer/releases/download"
+      path: "kin-event-keyer/download"
     values:
-      layout: private-download
+      layout: kek-download
       title: Download {{ page.version }} | KIN Event Keyer
-      page: Download

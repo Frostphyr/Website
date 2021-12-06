@@ -1,0 +1,5 @@
+{%- assign release = site.data[page.project].releases | last -%}
+{%- assign version = release.version -%}
+{%- assign name = include.name | liquify -%}
+{%- assign url = include.url | liquify -%}
+{%- array_add "name">name,"url">url -%}

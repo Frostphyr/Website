@@ -1,0 +1,5 @@
+{%- for project in site.data.projects -%}
+  {%- assign name = include.name -%}
+  {%- assign url = include.url -%}
+  {%- array_add "name">name,"url">url -%}
+{%- endfor -%}

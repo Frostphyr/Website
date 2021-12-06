@@ -1,0 +1,136 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" class="height-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <title>{{ page.title | liquify }}</title>
+  </head>
+  <body>
+    <nav class="bar">
+      {%- if page.project -%}
+        {%- assign info = site.data[page.project].info -%}
+        {%- array items -%}
+          {%- for item in info.navbar_items -%}
+            {%- if item.generator -%}
+              {%- array_create generated_items -%}
+              {%- array generated_items -%}
+                {%- include {{ item.generator }} name=item.name url=item.url -%}
+              {%- endarray -%}
+              {%- assign name = generated_items[0].name -%}
+              {%- assign url = generated_items[0].url -%}
+            {%- else -%}
+              {%- assign name = item.name -%}
+              {%- assign url = item.url -%}
+            {%- endif -%}
+            {%- hash_create hash:generated_item entries:"name">name,"url">url -%}
+            {%- if item.subitems -%}
+              {%- array_create generated_subitems -%}
+              {%- array generated_subitems -%}
+                {%- for subitem in item.subitems -%}
+                  {%- if subitem.generator -%}
+                    {%- include {{ subitem.generator }} name=subitem.name url=subitem.url -%}
+                  {%- else -%}
+                    {%- array_add "name">subitem.name,"url">subitem.url -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endarray -%}
+              {%- hash_set hash:generated_item key:"subitems" value:generated_subitems -%}
+            {%- endif -%}
+            {%- array_add generated_item -%}
+          {%- endfor -%}
+          {%- array_add "name">"Contact","url">"/contact?project={{ page.project }}" -%}
+          {%- if info.github_url -%}
+            {%- array_add "name">"GitHub","url">info.github_url,"icon_class">"github-icon" -%}
+          {%- endif -%}
+        {%- endarray -%}
+        {%- assign logo_class = info.logo_class -%}
+        {%- assign name = info.name -%}
+        {%- assign url = info.path -%}
+      {%- else -%}
+        {%- array items -%}
+          {%- array projects_subitems -%}
+            {%- for project in site.data.projects -%}
+              {%- assign info = site.data[project].info -%}
+              {%- array_add "name">info.name,"url">info.path -%}
+            {%- endfor -%}
+          {%- endarray -%}
+          {%- array_add "name">"Projects","url">"/projects","subitems">projects_subitems -%}
+          {%- array_add "name">"GitHub","url">"https://github.com/frostphyr","icon_class">"github-icon" -%}
+          {%- array_add "name">"Contact","url">"/contact" -%}
+        {%- endarray -%}
+        {%- assign logo_class = "frostphyr-icon" -%}
+        {%- assign name = "Frostphyr" -%}
+        {%- assign url = "/" -%}
+      {%- endif -%}
+      <div class="content">
+        <a class="bar-item bar-text" href="{{ url }}">
+          {%- if logo_class -%}
+            <span class="bar-icon {{ logo_class }}"></span>
+          {%- endif -%}
+          <strong>{{ name }}</strong>
+        </a>
+        <div class="right height-100">
+          <div class="gone-at-medium">
+            {%- for item in items -%}
+              {%- if item.subitems -%}
+                <div class="dropdown-hover inline">
+                  <a class="bar-item bar-text bar-link padding-x-small inline" href="{{ item.url | liqiufy }}">
+                    {%- if item.icon_class -%}
+                      <span class="bar-icon {{ item.icon_class }}"></span>
+                    {%- endif -%}
+                    {{ item.name }}
+                  </a>
+                  <div class="dropdown-content navbar-dropdown-content ">
+                    {%- for subitem in item.subitems -%}
+                      <a class="bar-item bar-text bar-link dropdown-item padding-x-small" href="{{ subitem.url }}">{{ subitem.name }}</a>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- else -%}
+                <a class="bar-item bar-text bar-link inline padding-x-small" href="{{ item.url | liquify }}">
+                  {%- if item.icon_class -%}
+                    <span class="bar-icon {{ item.icon_class }}"></span>
+                  {%- endif -%}
+                  {{ item.name }}
+                </a>
+                </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <div class="gone block-at-medium">
+            <input id="navbar-items-toggle" class="menu-toggle dropdown-toggle hidden" type="checkbox"/>
+            <label class="bar-item image-container unselectable" for="navbar-items-toggle">
+              <img class="small-image vertical-middle" src="/images/bars-solid.svg"/>
+            </label>
+            <div class="dropdown-content width-100 page-left navbar-dropdown-content">
+              {%- for item in items -%}
+                <a class="bar-item bar-text bar-link dropdown-item padding-x-small" href="{{ item.url }}">
+                  {%- if item.icon_class -%}
+                    <span class="bar-icon {{ item.icon_class }}"></span>
+                  {%- endif -%}
+                  {{ item.name }}
+                </a>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="content">
+      {{ content }}
+    </main>
+    <footer class="bar">
+      <div class="content">
+        <span class="bar-item bar-text">Copyright © {{ site.time | date: '%Y' }} Frostphyr</span>
+        <a class="bar-item image-container right" href="https://github.com/Frostphyr">
+          <img class="small-image vertical-middle" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

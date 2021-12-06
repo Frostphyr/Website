@@ -1,15 +1,10 @@
 ---
 ---
 
+@import "normalize";
+@import "defaults";
 @import "base";
+@import "text";
+@import "spacing";
+@import "responsive";
 @import "syntax-highlight";
-@import "navbar";
-@import "footer";
-@import "project-navbar";
-@import "home";
-@import "projects";
-@import "contact";
-@import "release";
-@import "releases";
-@import "kin-event-keyer";
-@import "error";

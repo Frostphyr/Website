@@ -1,51 +1,26 @@
 ---
-layout: project
+layout: download
 ---
 
-{% assign project = page.projects[page.project-id] %}
+{%- assign info = site.data[page.project].info -%}
+{%- assign license = site.data.licenses[info.license] -%}
 
-<header>
-    <h1>Download {{ project.name }} {{ page.version }}</h1>
-    <p id="release-date">Release date: {{ page.date | date: "%B %-d, %Y" }}</p>
-</header>
-<div class="side-panel container">
-    <h2 class="side-panel-header">Related Links</h2>
-    <ul>
-        <li>
-            <a class="link-item" href="{{ page.github-url }}">
-                <img class="small-logo line-item" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
-                <span class="a-text line-item"> GitHub</span>
-            </a>
-        </li>
-        <li><a href="{{ project.url }}/releases/{{ page.version }}">Release Notes</a></li>
-        {%- for link in page.related-links -%}
-            <li><a href="{{ link.url | liquify }}">{{ link.name }}</a></li>
-        {%- endfor -%}
-        <li><a href="{{ project.url }}/releases">All Releases</a></li>
-    </ul>
-</div>
-<div class="empty-divider right"></div>
-<div id="main-content">
-    <h2>License</h2>
-    <p>
-        {%- assign license = page.licenses[page.license-id] -%}
-        {{ project.name }} is licensed under 
-        <a href="{{ license.url }}">{{ license.name }}</a>.&nbsp;
-        {%- include {{ license.description-url }} -%}
-    </p>
-    {{ content }}
-    <h2>Download</h2>
-    <p>You may also directly download the files:</p>
-    <ul>
-        {%- assign path = project.url | append: "/releases/download/" | append: page.version -%}
-        {%- for file in page.files -%}
-        {%- assign generated_file = file | liquify -%}
-            <li>
-                <a href="{{ path }}/{{ generated_file }}" download><code>{{ generated_file }}</code></a>
-                (<a href="{{ path }}/{{ generated_file }}.sha512"><code>SHA-512</code></a>
-                &middot; 
-                <a href="{{ path }}/{{ generated_file }}.asc"><code>ASC</code></a>)
-            </li>
-        {%- endfor -%}
-    </ul>
-</div>
+<h2>License</h2>
+<p>{{ info.name }} is licensed under 
+  <a href="{{ license.url }}">{{ license.name }}</a>.&nbsp;
+  You may also refer to the included LICENSE.txt file.
+</p>
+{{ content }}
+<h2>Download</h2>
+<ul>
+  {%- assign path = info.path | append: "/download/" | append: page.version -%}
+  {%- for file in info.files -%}
+  {%- assign generated_file = file | liquify -%}
+    <li>
+      <a href="{{ path }}/{{ generated_file }}" download><code>{{ generated_file }}</code></a>
+      (<a href="{{ path }}/{{ generated_file }}.sha512"><code>SHA-512</code></a>
+      &middot; 
+      <a href="{{ path }}/{{ generated_file }}.asc"><code>ASC</code></a>)
+    </li>
+  {%- endfor -%}
+</ul>

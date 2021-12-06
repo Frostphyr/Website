@@ -1,0 +1,12 @@
+{%- assign releases = site.data[page.project].releases | reverse -%}
+{%- assign major = -1 -%}
+{%- for release in releases -%}
+  {%- assign current_major = release.version | major -%}
+  {%- if major != current_major -%}
+    {%- assign major = current_major -%}
+    {%- assign version = release.version -%}
+    {%- assign name = include.name | liquify -%}
+    {%- assign url = include.url | liquify -%}
+    {%- array_add "name">name,"url">url -%}
+  {%- endif -%}
+{%- endfor -%}

@@ -2,5 +2,5 @@
 ---
 <?php
 
-{% include latest-release.html %}
-include("{{ latest_release.version }}/index.html");
+{% assign release = site.data[page.project].releases | last %}
+include("{{ release.version }}/index.{{ page.file_type }}");

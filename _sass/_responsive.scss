@@ -1,0 +1,27 @@
+@media screen and (max-width: $medium-width) {
+
+  .gone-at-medium {
+    display: none;
+  }
+
+  .block-at-medium {
+    display: block;
+  }
+
+  .side-panel {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+@media screen and (max-width: $large-width) {
+
+  .block-at-large {
+    display: block;
+    width: 100%;
+  }
+
+}

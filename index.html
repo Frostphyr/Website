@@ -1,31 +1,11 @@
 ---
-layout: default
+layout: base
 title: Frostphyr
 ---
 
-<header>
-    <h1 id="home-intro-title">Frostphyr</h1>
-    <p id="home-intro-tagline">Creating a variety of software and development tools</p>
-</header>
-<a class="button" href="/projects">Projects</a>
-<div class="page-divider"></div>
-<div class="container">
-    <h2>News</h2>
-    {%- assign releases = site.pages | where: "layout", "release" | sort: "date" | reverse -%}
-    {%- for release in releases limit: 3 -%}
-        {%- if forloop.first != true -%}
-            <div class="divider"></div>
-        {%- endif -%}
-        <div class="home-news-release-header">
-            <p class="home-news-release-info">
-                {%- assign project = page.projects[release.project-id] -%}
-                <a href="{{ project.url }}">{{ project.name }}</a>
-                version
-                <a href="{{ project.url }}/releases/download/{{ release.version }}">{{ release.version }}</a>
-                released
-            </p>
-            <p class="home-news-release-date">{{ release.date | date: "%B %-d, %Y" }}</p>
-        </div>    
-        <p class="home-news-release-description">{{ release.description }}</p>
-    {%- endfor -%}
+<div class="page-center-container">
+  <header class="page-center">
+    <h1 class="project-header text-center">Frostphyr</h1>
+    <h2 class="project-subheader text-center">Creating a variety of software and development tools</h2>
+  </header>
 </div>

@@ -1,7 +1,6 @@
 ---
-layout: project
+layout: base
 title: Manual | KIN Event Keyer
-page: Manual
 ---
 
 # Manual

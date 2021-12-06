@@ -1,0 +1,36 @@
+name: Avail
+path: /avail/java
+description: Library of general-purpose utilities
+github_url: https://github.com/Frostphyr/avail-java
+license: apache2
+maven_groupId: com.frostphyr
+maven_artifactId: avail
+files:
+  - avail-{{ page.version }}.jar
+  - avail-{{ page.version }}-sources.jar
+  - avail-{{ page.version }}-javadoc.jar
+download_related_links:
+  - name: Release Notes
+    url: /avail/java/release-notes#{{ page.version }}
+  - name: Documentation
+    url: /avail/java/docs/{{ page.version | major }}.{{ page.version | minor }}
+  - name: All Releases
+    url: /avail/java/releases
+navbar_items:
+  - name: Download
+    url: /avail/java/download
+    subitems:
+      - name: '{{ version }}'
+        url: /avail/java/download/{{ version }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /avail/java/releases
+  - name: Documentation
+    url: /avail/java/docs/{{ version | major }}.{{ version | minor }}
+    generator: latest-version-generator.html
+    subitems:
+      - name: '{{ version | major }}.{{ version | minor }}'
+        url: /avail/java/docs/{{ version | major }}.{{ version | minor }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /avail/java/releases

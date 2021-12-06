@@ -1,0 +1,57 @@
+$text-color: #EEEEEE;
+$secondary-text-color: #FBFBFB;
+$tertiary-text-color: #CCCCCC;
+
+.project-header {
+  font-size: 3rem;
+}
+
+.project-subheader {
+  font-size: 2rem;
+}
+
+.subtext {
+  color: #CCCCCC;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.error-text {
+  color: #FF0000;
+  line-height: 1em;
+}
+
+.banner-text {
+  color: #000000;
+  background-color: #B9E8EA;
+  padding: 6px;
+  font-size: 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.text-link {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+.bar-text, .bar-text:hover {
+  color: $secondary-text-color;
+  text-decoration: none;
+}
+
+.bar-link {
+  background-color: $bar-background;
+}
+
+.bar-link:hover {
+  background-color: #2F2F2F;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}

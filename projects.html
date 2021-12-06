@@ -1,25 +1,29 @@
 ---
-layout: default
+layout: base
 title: Projects | Frostphyr
 ---
 
-<h1>Projects</h1>
-{%- assign middle = page.projects | size | plus: 1 | divided_by: 2 -%}
-<div class="column-2-left">
-    {%- for project in page.projects limit: middle -%}
-        <div class="container">
-            <a class="project-name" href="{{ project.url }}">{{ project.name }}</a>
-            <div class="divider"></div>
-            <p>{{ project.description }}</p>
-        </div>
+<div>
+  <h1>Projects</h1>
+  {%- assign middle = site.data.projects | size | plus: 1 | divided_by: 2 -%}
+  <div class="column-2 left">
+    {%- for project in site.data.projects limit: middle -%}
+      {%- assign info = site.data[project].info -%}
+      <div class="container padding-x-small">
+        <h2><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></h2>
+        <div class="divider"></div>
+        <p>{{ info.description }}</p>
+      </div>
     {%- endfor -%}
-</div>
-<div class="column-2-right">
-    {%- for project in page.projects offset: middle -%}
-        <div class="container">
-            <a class="project-name" href="{{ project.url }}">{{ project.name }}</a>
-            <div class="divider"></div>
-            <p>{{ project.description }}</p>
-        </div>
+  </div>
+  <div class="column-2 right">
+    {%- for project in site.data.projects offset: middle -%}
+      {%- assign info = site.data[project].info -%}
+      <div class="container padding-x-small">
+        <h2><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></h2>
+        <div class="divider"></div>
+        <p>{{ info.description }}</p>
+      </div>
     {%- endfor -%}
+  </div>
 </div>

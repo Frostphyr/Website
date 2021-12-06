@@ -1,64 +1,46 @@
 ---
-layout: project
+layout: base
 ---
 
-{%- include latest-release.html -%}
-{%- assign releases = releases  | reverse -%}
-{%- assign project = page.projects[page.project-id] -%}
+{%- assign releases = site.data[page.project].releases | reverse -%}
+{%- assign info = site.data[page.project].info -%}
 
-<h1>{{ project.name }} Releases</h1>
-{%- for i in (1..highest_major) reversed -%}
-    <h2 class="major-version">Version {{ i }}</h2>
-    <input class="collapse-checkbox major-version-checkbox hidden" type="checkbox" id="collapse-{{ i }}">
-    <span class="collapse-labels unselectable">
-        <label class="collapse-label major-collapse-label" for="collapse-{{ i }}">-</label>
-        <label class="expand-label major-collapse-label" for="collapse-{{ i }}">+</label>
-    </span>
-    {%- assign highest_minor = 0 -%}
-    {%- for release in releases -%}
-        {%- assign major = release.version | major -%}
-        {%- assign minor = release.version | minor -%}
-        {%- if major == i and minor > highest_minor -%}
-            {%- assign highest_minor = minor -%}
+<h1>{{ info.name }} Releases</h1>
+{%- assign major = -1 -%}
+{%- assign minor = -1 -%}
+<ul>
+  {%- for release in releases -%}
+    {%- assign current_major = release.version | major -%}
+    {%- assign current_minor = release.version | minor -%}
+    {%- if current_major != major or current_minor != minor -%}
+      {%- assign major = current_major -%}
+      {%- assign minor = current_minor -%}
+      </ul>
+      <h2>
+        Version {{ major }}.{{ minor }}
+        {%- if page.minor_links -%}
+          &nbsp;-&nbsp;
+          {%- for link in page.minor_links -%}
+            <a href="{{ info.path }}{{ link.path }}{{ major }}.{{ minor }}">{{ link.name }}</a>
+            {%- if forloop.last == false -%}
+              &nbsp;|&nbsp;
+            {%- endif -%}
+          {%- endfor -%}
         {%- endif -%}
-    {%- endfor -%}
-    <div class="minor-versions">
-        {%- for j in (0..highest_minor) reversed -%}
-            <div>
-                <span class="minor-version">Version {{ i }}.{{ j }}
-                    {%- if page.minor-links -%}
-                        &nbsp;-&nbsp;
-                        {%- for link in page.minor-links -%}
-                            <a href="{{ project.url }}{{ link.path }}{{ i }}.{{ j }}">{{ link.name }}</a>
-                            {%- if forloop.last == false -%}
-                                &nbsp;|&nbsp;
-                            {%- endif -%}
-                        {%- endfor -%}
-                    {%- endif -%}
-                </span>
-                <input class="collapse-checkbox minor-version-checkbox hidden" type="checkbox" id="collapse-{{ i }}.{{ j }}">
-                <span class="collapse-labels unselectable">
-                    <label class="collapse-label minor-collapse-label" for="collapse-{{ i }}.{{ j }}">-</label>
-                    <label class="expand-label minor-collapse-label" for="collapse-{{ i }}.{{ j }}">+</label>
-                </span>
-                <ul class="releases">
-                    {%- for release in releases -%}
-                        {%- assign major = release.version | major -%}
-                        {%- assign minor = release.version | minor -%}
-                        {%- if major == i and minor == j -%}
-                            <li class="releases">
-                                {{ release.version }} ({{ release.date | date: "%B %-d, %Y" }}) -&nbsp;
-                                {%- for link in page.links -%}
-                                    <a href="{{ project.url }}{{ link.path }}{{ release.version }}">{{ link.name }}</a>
-                                    {%- if forloop.last == false -%}
-                                        &nbsp;|&nbsp;
-                                    {%- endif -%}
-                                {%- endfor -%}
-                            </li>
-                        {%- endif -%}
-                    {%- endfor -%}
-                </ul>
-            </div>
+      </h2>
+      <ul>
+    {%- endif -%}
+    <li>
+      Version {{ release.version }} ({{ release.date | date: "%B %-d, %Y" }})
+      {%- if page.patch_links -%}
+        &nbsp;-&nbsp;
+        {%- for link in page.patch_links -%}
+          <a href="{{ info.path }}{{ link.path }}{{ release.version }}">{{ link.name }}</a>
+          {%- if forloop.last == false -%}
+            &nbsp;|&nbsp;
+          {%- endif -%}
         {%- endfor -%}
-    </div>
-{%- endfor -%}
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

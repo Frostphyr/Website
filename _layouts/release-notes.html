@@ -1,0 +1,35 @@
+---
+layout: base
+---
+
+{%- assign doc_path = site.data[page.project].info.path | append: "/docs/{{ version | major }}.{{ version | minor }}/com/frostphyr/avail" -%}
+
+<h1>Release Notes</h1>
+{%- for release in site.data[page.project].releases reversed -%}
+  {%- assign version = release.version -%}
+  <h2 id="{{ release.version }}">Version {{ version }}</h2>
+  {%- if release.notes -%}
+    <table>
+      <colgroup>
+        <col span="1" style="width: 10%">
+        <col span="1" style="width: 90%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for note in release.notes -%}
+          <tr>
+            <td>{{ note.type }}</td>
+            <td>{{ note.description | liquify | liquify }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  {%- else -%}
+    <p>No release notes</p>
+  {%- endif -%}
+{%- endfor -%}
