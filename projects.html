@@ -9,7 +9,7 @@ title: Projects | Frostphyr
   <div class="column-2 left">
     {%- for project in site.data.projects limit: middle -%}
       {%- assign info = site.data[project].info -%}
-      <div class="container padding-x-small">
+      <div class="container padding-x-small margin-y-small">
         <h2><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></h2>
         <div class="divider"></div>
         <p>{{ info.description }}</p>
@@ -19,7 +19,7 @@ title: Projects | Frostphyr
   <div class="column-2 right">
     {%- for project in site.data.projects offset: middle -%}
       {%- assign info = site.data[project].info -%}
-      <div class="container padding-x-small">
+      <div class="container padding-x-small margin-y-small">
         <h2><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></h2>
         <div class="divider"></div>
         <p>{{ info.description }}</p>
