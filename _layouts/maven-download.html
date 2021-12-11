@@ -6,30 +6,21 @@ layout: public-download
 {%- assign info = site.data[page.project].info -%}
 <h2>Maven</h2>
 <p>Add the following dependency:</p>
-{%- capture maven -%}
-```xml
+{%- highlight xml -%}
 <dependency>
   <groupId>{{ info.maven_groupId }}</groupId>
   <artifactId>{{ info.maven_artifactId }}</artifactId>
   <version>{{ page.version }}</version>
 </dependency>
-```
-{%- endcapture -%}
-{{ maven | markdownify }}
+{%- endhighlight -%}
 <h2>Gradle</h2>
 <p>Ensure the Maven Central repository is declared:</p>
-{%- capture gradle_repository -%}
-```gradle
+{%- highlight gradle -%}
 repositories {
   mavenCentral()
 }
-```
-{%- endcapture -%}
-{{ gradle_repository | markdownify }}
+{%- endhighlight -%}
 <p>Add the following dependency:</p>
-{%- capture gradle_dependency -%}
-```gradle
+{%- highlight gradle -%}
 implementation '{{ info.maven_groupId }}:{{ info.maven_artifactId }}:{{ page.version }}'
-```
-{%- endcapture -%}
-{{ gradle_dependency | markdownify }}
+{%- endhighlight -%}
