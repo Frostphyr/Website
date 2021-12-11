@@ -1,0 +1,25 @@
+---
+layout: public-download
+---
+
+{{ content }}
+{%- assign info = site.data[page.project].info -%}
+<h2>Installation</h2>
+<h3>Bundler</h3>
+<p>Add this line to your application's Gemfile:</p>
+{%- highlight ruby -%}
+gem '{{ info.gem }}', '~> {{ page.version }}'
+{%- endhighlight -%}
+<p class="container padding-small">
+  <strong>NOTE: </strong>You may alternatively want to use a 
+  <a href="https://guides.rubygems.org/patterns/#pessimistic-version-constraint">version constraint</a>
+</p>
+<p>And then run the command:</p>
+{%- highlight console -%}
+$ bundle install
+{%- endhighlight -%}
+<h3>Gem</h3>
+<p>Run the command:</p>
+{%- highlight console -%}
+$ gem install {{ info.gem }} -v {{ page.version }}
+{%- endhighlight -%}
