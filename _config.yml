@@ -2,12 +2,18 @@ permalink: pretty
 exclude: ["downloads"]
 plugins:
   - liquid-arrays
+exclude:
+  - "*.code-workspace"
 
 defaults:
   - scope:
       path: "avail/java"
     values:
       project: avail
+  - scope:
+      path: "liquid-arrays"
+    values:
+      project: liquid-arrays
   - scope:
       path: "kin-event-keyer"
     values:

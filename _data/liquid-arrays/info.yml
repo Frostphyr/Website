@@ -1,0 +1,36 @@
+name: Liquid Arrays
+path: /liquid-arrays
+description: Adds better support for arrays and hashes in Liquid
+github_url: https://github.com/Frostphyr/liquid-arrays
+license: apache2
+gem: liquid-arrays
+files:
+  - liquid-arrays-{{ page.version }}.gem
+extra_file_types:
+  - name: SHA-256
+    extension: sha256
+download_related_links:
+  - name: Release Notes
+    url: /liquid-arrays/release-notes#{{ page.version }}
+  - name: User Guide
+    url: /liquid-arrays/user-guide/{{ page.version | major }}.{{ page.version | minor }}
+  - name: All Releases
+    url: /liquid-arrays/releases
+navbar_items:
+  - name: Download
+    url: /liquid-arrays/download
+    subitems:
+      - name: '{{ version }}'
+        url: /liquid-arrays/download/{{ version }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /liquid-arrays/releases
+  - name: User Guide
+    url: /liquid-arrays/user-guide/{{ version | major }}.{{ version | minor }}
+    generator: latest-version-generator.html
+    subitems:
+      - name: '{{ version | major }}.{{ version | minor }}'
+        url: /liquid-arrays/user-guide/{{ version | major }}.{{ version | minor }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /liquid-arrays/releases

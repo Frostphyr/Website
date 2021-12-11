@@ -1,0 +1,24 @@
+- version: 1.0.0
+  date: 2021/07/15
+- version: 1.1.0
+  date: 2021/09/10
+  notes:
+    - type: New
+      description: Added array_create and hash_create tags
+    - type: New
+      description: >
+        Arrays and hashes can now be defined inline to be used as attributes
+    - type: New
+      description: Improved error handling to now use Liquid's error_mode
+    - type: Fix
+      description: >
+        Arrays and hashes will be created in the proper scope instead of the 
+        outer-most scope
+    - type: Fix
+      description: >
+        Fixed issue when using default attributes that use special characters, 
+        like array elements
+    - type: Fix
+      description: >
+        Added check to ensure a variable is an array or hash before modifying 
+        it to avoid errors
