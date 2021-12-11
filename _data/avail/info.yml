@@ -9,6 +9,11 @@ files:
   - avail-{{ page.version }}.jar
   - avail-{{ page.version }}-sources.jar
   - avail-{{ page.version }}-javadoc.jar
+extra_file_types:
+  - name: SHA-512
+    extension: sha512
+  - name: ASC
+    extension: asc
 download_related_links:
   - name: Release Notes
     url: /avail/java/release-notes#{{ page.version }}

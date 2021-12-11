@@ -18,9 +18,16 @@ layout: download
   {%- assign generated_file = file | liquify -%}
     <li>
       <a href="{{ path }}/{{ generated_file }}" download><code>{{ generated_file }}</code></a>
-      (<a href="{{ path }}/{{ generated_file }}.sha512"><code>SHA-512</code></a>
-      &middot; 
-      <a href="{{ path }}/{{ generated_file }}.asc"><code>ASC</code></a>)
+      {%- if info.extra_file_types -%}
+        &nbsp;(
+        {%- for type in info.extra_file_types -%}
+          <a href="{{ path }}/{{ generated_file }}.{{ type.extension }}"><code>{{ type.name }}</code></a>
+          {%- if forloop.last == false -%}
+            &nbsp;&middot;&nbsp;
+          {%- endif -%}
+        {%- endfor -%}
+        )
+      {%- endif -%}
     </li>
   {%- endfor -%}
 </ul>
