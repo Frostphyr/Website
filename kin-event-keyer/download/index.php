@@ -1,4 +1,4 @@
 ---
-layout: latest-download
+layout: include-latest-version
 file_type: php
 ---
