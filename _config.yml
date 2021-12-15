@@ -2,6 +2,7 @@ permalink: pretty
 exclude: ["downloads"]
 plugins:
   - liquid-arrays
+  - jekyll-php
 exclude:
   - "*.code-workspace"
 
