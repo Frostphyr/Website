@@ -26,8 +26,7 @@ navbar_items:
       - name: All releases
         url: /liquid-arrays/releases
   - name: User Guide
-    url: /liquid-arrays/user-guide/{{ version | major }}.{{ version | minor }}
-    generator: latest-version-generator.html
+    url: /liquid-arrays/user-guide
     subitems:
       - name: '{{ version | major }}.{{ version | minor }}'
         url: /liquid-arrays/user-guide/{{ version | major }}.{{ version | minor }}
