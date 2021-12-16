@@ -1,0 +1,27 @@
+---
+layout: base
+---
+
+{%- assign releases = site.data[page.project].releases | reverse -%}
+{%- assign info = site.data[page.project].info -%}
+
+<h1>{{ info.name }} Documentation</h1>
+{%- assign major = -1 -%}
+{%- assign minor = -1 -%}
+<ul>
+  {%- for release in releases -%}
+    {%- assign current_major = release.version | major -%}
+    {%- assign current_minor = release.version | minor -%}
+    {%- if current_major != major -%}
+      {%- assign major = current_major -%}
+      {%- assign minor = -1 -%}
+      </ul>
+      <h2>Version {{ major }}</h2>
+      <ul>
+    {%- endif -%} 
+    {%- if current_minor != minor -%}
+      {%- assign minor = current_minor -%}
+      <li><a href="{{ info.path }}/docs/{{ major }}.{{ minor }}">{{ major }}.{{ minor }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
