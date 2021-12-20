@@ -1,0 +1,35 @@
+name: Jekyll PHP
+path: /jekyll-php
+description: Adds better support for PHP in Jekyll
+github_url: https://github.com/Frostphyr/jekyll-php
+license: apache2
+gem: jekyll-php
+files:
+  - jekyll-php-{{ page.version }}.gem
+extra_file_types:
+  - name: SHA-256
+    extension: sha256
+download_related_links:
+  - name: Release Notes
+    url: /jekyll-php/release-notes#{{ page.version }}
+  - name: User Guide
+    url: /jekyll-php/user-guide/{{ page.version | major }}.{{ page.version | minor }}
+  - name: All Releases
+    url: /jekyll-php/releases
+navbar_items:
+  - name: Download
+    url: /jekyll-php/download
+    subitems:
+      - name: '{{ version }}'
+        url: /jekyll-php/download/{{ version }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /jekyll-php/releases
+  - name: User Guide
+    url: /jekyll-php/user-guide
+    subitems:
+      - name: '{{ version | major }}.{{ version | minor }}'
+        url: /jekyll-php/user-guide/{{ version | major }}.{{ version | minor }}
+        generator: latest-major-versions-generator.html
+      - name: All releases
+        url: /jekyll-php/releases

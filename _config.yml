@@ -8,24 +8,28 @@ exclude:
 
 defaults:
   - scope:
-      path: "avail/java"
+      path: avail/java
     values:
       project: avail
   - scope:
-      path: "liquid-arrays"
+      path: liquid-arrays
     values:
       project: liquid-arrays
   - scope:
-      path: "kin-event-keyer"
+      path: jekyll-php
+    values:
+      project: jekyll-php
+  - scope:
+      path: kin-event-keyer
     values:
       project: kin-event-keyer
   - scope:
-      path: "avail/java/download"
+      path: avail/java/download
     values:
       layout: avail-download
       title: Download {{ page.version }} | Avail
   - scope:
-      path: "kin-event-keyer/download"
+      path: kin-event-keyer/download
     values:
       layout: kek-download
       title: Download {{ page.version }} | KIN Event Keyer
