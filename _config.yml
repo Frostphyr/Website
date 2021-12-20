@@ -23,13 +23,3 @@ defaults:
       path: kin-event-keyer
     values:
       project: kin-event-keyer
-  - scope:
-      path: avail/java/download
-    values:
-      layout: avail-download
-      title: Download {{ page.version }} | Avail
-  - scope:
-      path: kin-event-keyer/download
-    values:
-      layout: kek-download
-      title: Download {{ page.version }} | KIN Event Keyer
