@@ -76,7 +76,7 @@ function projectSelected($project) {
     }
     ?>
     <form action="" method="post">
-      <select class="width-100" name="project">
+      <select class="block width-100" name="project">
         <option value="Project">Project</option>
         {%- for project in site.data.projects -%}
           {%- assign name = site.data[project].info.name -%}
