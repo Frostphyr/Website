@@ -1,6 +1,8 @@
+url: https://frostphyr.com
 permalink: pretty
 exclude: ["downloads"]
 plugins:
+  - jekyll-sitemap
   - liquid-arrays
   - jekyll-php
 exclude:
