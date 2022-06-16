@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($mail->send()) {
           $success = true;
         } else {
-          $error = "Error sending message";
+          $error = "Error sending message, please try again later or use an alternative contact method";
           error_log($mail->ErrorInfo);
         }
       }
