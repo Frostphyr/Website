@@ -46,14 +46,19 @@ li {
   margin-left: 16px;
 }
 
-h2, h3, h4, h5, h6 {
+header, h1, h2, h3, h4, h5, h6 {
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
-h1, p, li, table, input[type=text], input[type=email], select, textarea {
+p, li, table, textarea {
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+header * {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 h1, .h1 {
@@ -62,11 +67,17 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+h2 {
+  border-bottom: 2px solid #4D4D4D;
+  width: 100%;
 }
 
 h3, .h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 h4, .h4 {
@@ -90,17 +101,10 @@ textarea {
   display: block;
 }
 
-input[type=text], input[type=email], textarea {
-  display: block;
+input[type=text], input[type=email], select, textarea {
   color: #000000;
-  border: #000000 solid 1px;
-  padding: 6px;
-  border-radius: 4px;
-}
-
-select {
-  padding: 6px;
-  border-radius: 4px;
   background-color: #FFFFFF;
   border: #000000 solid 1px;
+  padding: 6px;
+  border-radius: 4px;
 }

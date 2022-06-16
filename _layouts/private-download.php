@@ -79,7 +79,9 @@ if (isset($_POST["submit"])) {
   <input type="checkbox" id="license-agreement" name="license-agreement" <?php errorOutline("license-agreement"); ?>>
   <label for="license-agreement">I reviewed and accept the <a href="/{{ page.project }}/license">License Agreement</a></label>
   <?php errorMessage("license-agreement"); ?>
-  <input type="text" name="key" placeholder="License key" size="25" required <?php errorBorder("key"); ?>>
-  <?php errorMessage("key"); ?>
-  <input class="button" type="submit" name="submit" value="Download">
+  <p>
+    <input type="text" name="key" placeholder="License key" size="25" required <?php errorBorder("key"); ?>>
+    <?php errorMessage("key"); ?>
+    <input class="button" type="submit" name="submit" value="Download">
+  </p>
 </form>
