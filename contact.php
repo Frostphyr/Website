@@ -76,20 +76,21 @@ function projectSelected($project) {
     }
     ?>
     <form action="" method="post">
-      <select class="block width-100" name="project">
+      <p><select class="width-100" name="project">
         <option value="Project">Project</option>
         {%- for project in site.data.projects -%}
           {%- assign name = site.data[project].info.name -%}
           <option value="{{ name }}" <?php projectSelected("{{ project }}") ?>>{{ name }}</option>
         {%- endfor -%}
         <option value="Other" <?php projectSelected("other") ?>>Other</option>
-      </select>
+      </select></p>
       <?php errorMessage("project"); ?>
-      <input class="width-100" type="email" name="email" placeholder="Email address" required>
+      <p><input class="width-100" type="email" name="email" placeholder="Email address" required></p>
       <?php errorMessage("email"); ?>
       <textarea class="width-100 unresizable" name="message" placeholder="Message" rows="7" maxlength="500" required></textarea>
       <?php errorMessage("message"); ?>
       <input class="gone" type="checkbox" name="contact-tos" value="tos">
+      <p class="subtext small-text">By using this form, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></p>
       <input class="button" type="submit" value="Submit">
       <?php errorMessage(); ?>
     </form>

@@ -43,10 +43,10 @@
             {%- endif -%}
             {%- array_add generated_item -%}
           {%- endfor -%}
-          {%- array_add "name">"Contact","url">"/contact?project={{ page.project }}" -%}
           {%- if info.github_url -%}
             {%- array_add "name">"GitHub","url">info.github_url,"icon_class">"github-icon" -%}
           {%- endif -%}
+          {%- array_add "name">"Contact","url">"/contact?project={{ page.project }}" -%}
         {%- endarray -%}
         {%- assign logo_class = info.logo_class -%}
         {%- assign name = info.name -%}
@@ -79,7 +79,7 @@
             {%- for item in items -%}
               {%- if item.subitems -%}
                 <div class="dropdown-hover inline">
-                  <a class="bar-item bar-text bar-link padding-x-small inline" href="{{ item.url | liqiufy }}">
+                  <a class="bar-item bar-text bar-dropdown-link padding-x-small inline" href="{{ item.url | liqiufy }}">
                     {%- if item.icon_class -%}
                       <span class="bar-icon {{ item.icon_class }}"></span>
                     {%- endif -%}
@@ -87,12 +87,12 @@
                   </a>
                   <div class="dropdown-content navbar-dropdown-content ">
                     {%- for subitem in item.subitems -%}
-                      <a class="bar-item bar-text bar-link dropdown-item padding-x-small" href="{{ subitem.url }}">{{ subitem.name }}</a>
+                      <a class="bar-item bar-text bar-dropdown-link dropdown-item padding-x-small" href="{{ subitem.url }}">{{ subitem.name }}</a>
                     {%- endfor -%}
                   </div>
                 </div>
               {%- else -%}
-                <a class="bar-item bar-text bar-link inline padding-x-small" href="{{ item.url | liquify }}">
+                <a class="bar-item bar-text bar-dropdown-link inline padding-x-small" href="{{ item.url | liquify }}">
                   {%- if item.icon_class -%}
                     <span class="bar-icon {{ item.icon_class }}"></span>
                   {%- endif -%}
@@ -108,7 +108,7 @@
             </label>
             <div class="dropdown-content width-100 page-left navbar-dropdown-content">
               {%- for item in items -%}
-                <a class="bar-item bar-text bar-link dropdown-item padding-x-small" href="{{ item.url }}">
+                <a class="bar-item bar-text bar-dropdown-link dropdown-item padding-x-small" href="{{ item.url }}">
                   {%- if item.icon_class -%}
                     <span class="bar-icon {{ item.icon_class }}"></span>
                   {%- endif -%}
@@ -126,9 +126,11 @@
     <footer class="bar">
       <div class="content">
         <span class="bar-item bar-text">Copyright © {{ site.time | date: '%Y' }} Frostphyr</span>
-        <a class="bar-item image-container right" href="https://github.com/Frostphyr">
-          <img class="small-image vertical-middle" src="/images/GitHub-mark-light.svg" alt="GitHub"/>
-        </a>
+        <span class="bar-item right">
+          <a class="bar-text bar-link" href="/terms">Terms of Service</a>
+          &nbsp;&middot;&nbsp;
+          <a class="bar-text bar-link" href="/privacy">Privacy Policy</a>
+        </span>
       </div>
     </footer>
   </body>

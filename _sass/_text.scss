@@ -10,11 +10,13 @@ $tertiary-text-color: #CCCCCC;
   font-size: 2rem;
 }
 
+.small-text {
+  font-size: 0.9rem;
+}
+
 .subtext {
   font-weight: normal;
   color: #CCCCCC;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .error-text {
@@ -41,11 +43,15 @@ $tertiary-text-color: #CCCCCC;
   text-decoration: none;
 }
 
-.bar-link {
+.bar-link:hover {
+  color: $tertiary-text-color;
+}
+
+.bar-dropdown-link {
   background-color: $bar-background;
 }
 
-.bar-link:hover {
+.bar-dropdown-link:hover {
   background-color: #2F2F2F;
 }
 
