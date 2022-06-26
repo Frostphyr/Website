@@ -11,7 +11,7 @@
     <title>{{ page.title | liquify }}</title>
   </head>
   <body>
-    <nav class="bar">
+    <nav>
       {%- if page.project -%}
         {%- assign info = site.data[page.project].info -%}
         {%- array items -%}
@@ -123,14 +123,14 @@
     <main class="content">
       {{ content }}
     </main>
-    <footer class="bar">
-      <div class="content">
-        <span class="bar-item bar-text">Copyright © {{ site.time | date: '%Y' }} Frostphyr</span>
-        <span class="bar-item right">
-          <a class="bar-text bar-link" href="/terms">Terms of Service</a>
-          &nbsp;&middot;&nbsp;
-          <a class="bar-text bar-link" href="/privacy">Privacy Policy</a>
+    <footer>
+      <div class="content small-text margin-y-small text-center-at-medium">
+        <span class="right float-none-at-medium">
+          <a class="bar-text bar-link margin-y-small block-at-medium" href="/terms">Terms of Service</a>
+          <span class="gone-at-medium">&nbsp;&middot;&nbsp;</span>
+          <a class="bar-text bar-link margin-y-small block-at-medium" href="/privacy">Privacy Policy</a>
         </span>
+        <span class="bar-text margin-y-small block-at-medium">Copyright © {{ site.time | date: '%Y' }} Frostphyr</span>
       </div>
     </footer>
   </body>

@@ -3,7 +3,6 @@ $secondary-accent-color: #A0CFD1;
 $accent-text-color: #000000;
 
 $bar-height: 2.5rem;
-$bar-background: #151515;
 
 $large-width: 1000px;
 $medium-width: 600px;
@@ -25,7 +24,8 @@ $medium-width: 600px;
 .page-center {
   display: table-cell;
   vertical-align: middle;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .vertical-middle {
@@ -155,11 +155,6 @@ $medium-width: 600px;
   display: block;
   white-space: nowrap;
   width: 100%;
-}
-
-.bar {
-  height: $bar-height;
-  background-color: $bar-background;
 }
 
 .bar-item {
