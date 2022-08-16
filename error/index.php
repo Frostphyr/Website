@@ -81,7 +81,7 @@ if (array_key_exists($message, $descriptions)) {
   $message = "$descriptions[$message] ($message)";
 }
 echo "<h1 class=\"text-left\">$message</h1>";
-echo "<h2>If you believe this to be in error, please 
-<a href=\"/contact\">contact us</a>.</h2>";
+echo "<p class=\"h2\">If you believe this to be in error, please 
+<a href=\"/contact\">contact us</a>.</p>";
 
 ?>
