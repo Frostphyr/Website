@@ -1,4 +1,4 @@
-url: https://frostphyr.com
+url: "https://frostphyr.com"
 permalink: pretty
 exclude: ["downloads"]
 plugins:
