@@ -6,19 +6,19 @@
     - type: New
       description: >
         <a href="{{ doc_path }}/Argument">Argument</a> - Added extra methods 
-        with a String parameter for a detail message to add to the 
-        IllegalArgumentException if it's thrown
+        with a <code>String</code> parameter for a detail message to add to 
+        the <code>IllegalArgumentException</code> if it's thrown
     - type: New
       description: >
-        <a href="{{ doc_path }}/Argument">Argument</a> - Added checkLength 
-        methods to check an array's length
+        <a href="{{ doc_path }}/Argument">Argument</a> - Added 
+        <code>checkLength</code> methods to check an array's length
 - version: 1.2.0
   date: 2021/03/21
   notes:
     - type: Change
       description: >
-        <a href="{{ doc_path }}/Argument">Argument</a> - Added null check for 
-        the array in 
+        <a href="{{ doc_path }}/Argument">Argument</a> - Added 
+        <code>null</code> check for the array in 
         <a href="{{ doc_path }}/Argument#checkLength(boolean[],%20int)">checkLength</a>
     - type: Change
       description: >
@@ -42,5 +42,52 @@
     - type: New
       description: >
         <a href="{{ doc_path }}/FloatingPoint">FloatingPoint</a> - A class 
-        containing methods for floating point types float and double. 
-        Initially has methods for the standard comparison operations
+        containing methods for floating point types <code>float</code> and 
+        <code>double</code>
+- version: 1.5.0
+  date: 2022/10/07
+  notes:
+    - type: New
+      description: >
+        <a href="{{ doc_path }}/ArrayUtils">ArrayUtils</a> - A class 
+        containing utility methods for arrays
+    - type: New
+      description: >
+        <a href="{{ doc_path }}/text/TextUtils">TextUtils</a> - A class 
+        containing utility methods for text; most notably <code>String</code> 
+        and <code>CharSequence</code>
+    - type: New
+      description: >
+        <a href="{{ doc_path }}/text/SurrogatePairPolicy">SurrogatePairPolicy</a> - 
+        An enum containing values indicating how to handle surrogate pairs 
+        during certain text operations
+    - type: New
+      description: >
+        <a href="{{ doc_path }}/text/StringConstants">StringConstants</a> - A 
+        class containing commonly used <code>String</code> constants
+    - type: New
+      description: >
+        <a href="{{ doc_path }}/ToStringBuilder">ToStringBuilder</a> - Added 
+        the following methods:<ul>
+          <li><a href="{{ doc_path }}/ToStringBuilder#forObject-java.lang.Object-">forObject(Object)</a></li>
+          <li><a href="{{ doc_path }}/ToStringBuilder#append-java.lang.String-boolean-">append(String,boolean)</a></li>
+          <li><a href="{{ doc_path }}/ToStringBuilder#append-java.lang.String-boolean:A-">append(String,boolean[])</a></li>
+          <li><a href="{{ doc_path }}/ToStringBuilder#append-java.lang.String-java.util.Map-">append(String,Map)</a></li>
+          <li><a href="{{ doc_path }}/ToStringBuilder#append-java.lang.String-java.lang.Iterable-">append(String,Iterable)</a> [replaces append(String,Collection)]</li>
+        </ul>
+    - type: New
+      description:
+        <a href="{{ doc_path }}/math/MatrixUtils">MatrixUtils</a> - Added the 
+        following methods:<ul>
+          <li><a href="{{ doc_path }}/math/MatrixUtils#validateMatrix-boolean:A-">validateMatrix(boolean[])</a></li>
+          <li><a href="{{ doc_path }}/math/MatrixUtils#validateMatrix-boolean:A:A-">validateMatrix(boolean[][])</a></li>
+          <li><a href="{{ doc_path }}/math/MatrixUtils#transpose-boolean:A-">transpose(boolean[])</a></li>
+          <li><a href="{{ doc_path }}/math/MatrixUtils#transpose-boolean:A:A-">transpose(boolean[][])</a></li>
+        </ul>
+    - type: Change
+      description: >
+        <a href="{{ doc_path }}/Argument">Argument</a> - Instead of specifying 
+        the full error message text, methods will now take only the name of the 
+        argument and use that to generate the error message
+    - type: Change
+      description: Updated minimum Java version to 8
