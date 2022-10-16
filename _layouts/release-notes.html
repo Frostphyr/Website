@@ -7,7 +7,7 @@ layout: base
 <h1>Release Notes</h1>
 {%- for release in site.data[page.project].releases reversed -%}
   {%- assign version = release.version -%}
-  <h2 id="{{ release.version }}">Version {{ version }}</h2>
+  <h2 id="{{ version }}">Version {{ version }} ({{ release.date | date: "%B %-d, %Y" }})</h2>
   {%- if release.notes -%}
     <table>
       <colgroup>
