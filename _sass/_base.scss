@@ -120,8 +120,15 @@ $medium-width: 600px;
   border-bottom: 1px solid;
 }
 
-.column-2 {
-  width: 49%;
+.column-container {
+  display: table;
+  table-layout: fixed;
+}
+
+.column {
+  display: table-cell;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .menu-toggle ~ label > img {

@@ -3,23 +3,23 @@ layout: base
 title: Projects | Frostphyr
 ---
 
-<div>
-  <h1>Projects</h1>
-  {%- assign middle = site.data.projects | size | plus: 1 | divided_by: 2 -%}
-  <div class="column-2 left">
+<h1>Projects</h1>
+{%- assign middle = site.data.projects | size | plus: 1 | divided_by: 2 -%}
+<div class="column-container width-100 block-at-medium">
+  <div class="column block-at-medium padding-y-none-at-medium">
     {%- for project in site.data.projects limit: middle -%}
       {%- assign info = site.data[project].info -%}
-      <div class="container padding-x-small margin-y-small">
+      <div class="container padding-x-small margin-y-large">
         <p class="h2"><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></p>
         <div class="divider"></div>
         <p>{{ info.description }}</p>
       </div>
     {%- endfor -%}
   </div>
-  <div class="column-2 right">
+  <div class="column block-at-medium padding-y-none-at-medium">
     {%- for project in site.data.projects offset: middle -%}
       {%- assign info = site.data[project].info -%}
-      <div class="container padding-x-small margin-y-small">
+      <div class="container padding-x-small margin-y-large">
         <p class="h2"><a class="text-link" href="{{ info.path }}">{{ info.name }}</a></p>
         <div class="divider"></div>
         <p>{{ info.description }}</p>
