@@ -6,7 +6,7 @@ title: Projects | Frostphyr
 <h1>Projects</h1>
 {%- assign middle = site.data.projects | size | plus: 1 | divided_by: 2 -%}
 <div class="column-container width-100 block-at-medium">
-  <div class="column block-at-medium padding-y-none-at-medium">
+  <div class="column padding-right-small padding-none-at-medium block-at-medium">
     {%- for project in site.data.projects limit: middle -%}
       {%- assign info = site.data[project].info -%}
       <div class="container padding-x-small margin-y-large">
@@ -16,7 +16,7 @@ title: Projects | Frostphyr
       </div>
     {%- endfor -%}
   </div>
-  <div class="column block-at-medium padding-y-none-at-medium">
+  <div class="column padding-left-small padding-none-at-medium block-at-medium">
     {%- for project in site.data.projects offset: middle -%}
       {%- assign info = site.data[project].info -%}
       <div class="container padding-x-small margin-y-large">

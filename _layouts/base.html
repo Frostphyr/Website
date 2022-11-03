@@ -76,7 +76,7 @@
         {%- assign url = "/" -%}
       {%- endif -%}
       <div class="content">
-        <a class="bar-item bar-text" href="{{ url }}">
+        <a class="bar-item bar-text padding-x-large" href="{{ url }}">
           {%- if logo_class -%}
             <span class="bar-icon {{ logo_class }}"></span>
           {%- endif -%}
@@ -112,11 +112,11 @@
           <div class="gone block-at-medium">
             <input id="navbar-items-toggle" class="menu-toggle dropdown-toggle hidden" type="checkbox"/>
             <label class="bar-item image-container unselectable" for="navbar-items-toggle">
-              <img alt="Toggle navbar items" class="small-image vertical-middle" src="/images/bars-solid.svg"/>
+              <img alt="Toggle navbar items" class="small-image vertical-middle padding-x-large" src="/images/bars-solid.svg"/>
             </label>
             <div class="dropdown-content width-100 page-left navbar-dropdown-content">
               {%- for item in items -%}
-                <a class="bar-item bar-text bar-dropdown-link dropdown-item padding-x-small" href="{{ item.url }}">
+                <a class="bar-item bar-text bar-dropdown-link dropdown-item padding-x-large" href="{{ item.url }}">
                   {%- if item.icon_class -%}
                     <span class="bar-icon {{ item.icon_class }}"></span>
                   {%- endif -%}
@@ -128,11 +128,11 @@
         </div>
       </div>
     </nav>
-    <main class="content">
+    <main class="content padding-x-large">
       {{ content }}
     </main>
     <footer>
-      <div class="content small-text margin-y-small text-center-at-medium">
+      <div class="content small-text padding-x-large margin-y-small text-center-at-medium">
         <span class="right float-none-at-medium">
           <a class="bar-text bar-link margin-y-small block-at-medium" href="/terms">Terms of Service</a>
           <span class="gone-at-medium">&nbsp;&middot;&nbsp;</span>
