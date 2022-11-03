@@ -12,7 +12,6 @@ $medium-width: 600px;
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 8px;
 }
 
 .page-center-container {
@@ -127,8 +126,6 @@ $medium-width: 600px;
 
 .column {
   display: table-cell;
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
 .menu-toggle ~ label > img {
@@ -173,6 +170,10 @@ $medium-width: 600px;
   background-position: left center;
 }
 
+.h1-icon {
+  height: 1.25rem;
+}
+
 .frostphyr-icon {
   background-image: url("/images/Frostphyr-logo.svg");
   background-size: 14px;
@@ -183,6 +184,12 @@ $medium-width: 600px;
   background-image: url("/images/GitHub-mark-light.svg");
   background-size: 18px;
   padding: 0 12px;
+}
+
+.notiphy-icon {
+  background-image: url("/images/notiphy/logo.png");
+  background-size: 18px;
+  padding: 0 10px;
 }
 
 .button {

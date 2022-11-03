@@ -32,6 +32,10 @@ $base: 8px;
   margin-left: $base;
 }
 
+.margin-right-small {
+  margin-right: $base;
+}
+
 .margin-bottom-large {
   margin-bottom: $base * 2;
 }
@@ -64,10 +68,27 @@ $base: 8px;
   padding-bottom: $base * 2;
 }
 
+.padding-left-small {
+  padding-left: $base;
+}
+
 .padding-right-xsmall {
   padding-right: $base / 2;
 }
 
+.padding-right-small {
+  padding-right: $base;
+}
+
 .padding-right-large {
   padding-right: $base * 2;
+}
+
+.margin-50 {
+  margin: 50px;
+}
+
+.margin-x-50 {
+  margin-left: 50px;
+  margin-right: 50px;
 }

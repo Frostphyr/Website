@@ -1,0 +1,17 @@
+name: Notiphy
+path: /notiphy
+description: Get notified about posts from various social media sites
+logo_class: notiphy-icon
+navbar_items:
+  - name: About
+    url: /notiphy/about
+  - name: Release Notes
+    url: /notiphy/release-notes
+  - name: Legal
+    subitems:
+      - name: Privacy Policy
+        url: /notiphy/privacy
+      - name: Terms of Service
+        url: /notiphy/terms
+      - name: EULA
+        url: /notiphy/eula
